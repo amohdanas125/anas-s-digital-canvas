@@ -95,27 +95,21 @@ function About() {
         </Reveal>
 
         <Reveal delay={120}>
-          <div className="glass grid-lines relative overflow-hidden rounded-3xl p-8">
+          <ProfilePhoto />
+          <div className="glass grid-lines relative mx-auto mt-6 max-w-sm overflow-hidden rounded-3xl p-6">
             <div className="font-mono text-xs leading-7 text-muted-foreground">
               <p>
                 <span className="text-primary">const</span> anas = {"{"}
               </p>
               <p className="pl-5">role: "Fullstack Developer",</p>
               <p className="pl-5">stack: ["Node", "Express", "MongoDB"],</p>
-              <p className="pl-5">languages: ["C", "C++", "Python"],</p>
               <p className="pl-5">focus: "DSA + Web",</p>
-              <p className="pl-5">location: "India",</p>
               <p>{"};"}</p>
             </div>
           </div>
         </Reveal>
       </section>
 
-      <section className="mt-20">
-        <Reveal>
-          <ProfilePhoto />
-        </Reveal>
-      </section>
 
       <section className="mt-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {HIGHLIGHTS.map(({ Icon, title, body }, i) => (

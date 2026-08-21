@@ -53,46 +53,48 @@ export function ProfilePhoto() {
   }
 
   return (
-    <div className="glass rounded-3xl p-7">
-      <p className="font-mono text-xs tracking-[0.3em] text-primary uppercase">Profile photo</p>
-      <div className="mt-6 flex flex-col items-center gap-5 sm:flex-row sm:items-center">
-        <div className="relative size-32 shrink-0 overflow-hidden rounded-2xl border border-border bg-muted">
-          {photo ? (
-            <img src={photo} alt="Mohd Anas" className="size-full object-cover" />
-          ) : (
-            <span className="flex size-full items-center justify-center text-muted-foreground">
-              <UserRound className="size-10" aria-hidden="true" />
-            </span>
-          )}
-        </div>
+    <div className="group glass relative mx-auto w-full max-w-sm overflow-hidden rounded-3xl p-3 transition-transform duration-500 hover:-translate-y-1">
+      <div
+        className="pointer-events-none absolute inset-0 opacity-60"
+        style={{ background: "var(--gradient-surface)" }}
+        aria-hidden="true"
+      />
+      <div className="relative aspect-[4/5] w-full overflow-hidden rounded-2xl border border-border bg-muted">
+        {photo ? (
+          <img
+            src={photo}
+            alt="Mohd Anas"
+            className="size-full object-cover transition-transform duration-700 group-hover:scale-[1.03]"
+          />
+        ) : (
+          <span className="flex size-full flex-col items-center justify-center gap-3 text-muted-foreground">
+            <UserRound className="size-10" aria-hidden="true" />
+            <span className="font-mono text-[0.65rem] tracking-[0.25em] uppercase">Add a photo</span>
+          </span>
+        )}
 
-        <div className="text-center sm:text-left">
-          <p className="text-sm text-muted-foreground">
-            Upload your own photo — it's stored privately in this browser, so nothing is sent
-            anywhere.
-          </p>
-          <div className="mt-4 flex flex-wrap justify-center gap-3 sm:justify-start">
-            <label className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5 focus-within:ring-2 focus-within:ring-ring">
-              <Camera className="size-4" aria-hidden="true" />
-              {photo ? "Change photo" : "Upload photo"}
-              <input
-                ref={inputRef}
-                type="file"
-                accept="image/*"
-                className="sr-only"
-                onChange={(e) => handleFile(e.target.files?.[0])}
-              />
-            </label>
-            {photo && (
-              <button
-                type="button"
-                onClick={remove}
-                className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-destructive hover:text-destructive"
-              >
-                <Trash2 className="size-4" aria-hidden="true" /> Remove
-              </button>
-            )}
-          </div>
+        <div className="absolute inset-x-0 bottom-0 flex items-center justify-center gap-2 bg-gradient-to-t from-background/90 to-transparent p-3 opacity-0 transition-opacity duration-300 group-hover:opacity-100 focus-within:opacity-100">
+          <label className="inline-flex cursor-pointer items-center gap-2 rounded-full bg-primary px-4 py-2 text-xs font-medium text-primary-foreground focus-within:ring-2 focus-within:ring-ring">
+            <Camera className="size-3.5" aria-hidden="true" />
+            {photo ? "Change photo" : "Upload photo"}
+            <input
+              ref={inputRef}
+              type="file"
+              accept="image/*"
+              className="sr-only"
+              onChange={(e) => handleFile(e.target.files?.[0])}
+            />
+          </label>
+          {photo && (
+            <button
+              type="button"
+              onClick={remove}
+              aria-label="Remove photo"
+              className="inline-flex items-center rounded-full border border-border bg-background/70 p-2 text-muted-foreground transition-colors hover:border-destructive hover:text-destructive"
+            >
+              <Trash2 className="size-3.5" aria-hidden="true" />
+            </button>
+          )}
         </div>
       </div>
     </div>
