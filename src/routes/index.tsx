@@ -1,6 +1,7 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
 import { ArrowRight, Sparkles, Terminal, Rocket } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
+import { ProfilePhoto } from "@/components/site/ProfilePhoto";
 
 export const Route = createFileRoute("/")({
   head: () => ({
@@ -107,6 +108,12 @@ function About() {
               <p>{"};"}</p>
             </div>
           </div>
+        </Reveal>
+      </section>
+
+      <section className="mt-20">
+        <Reveal>
+          <ProfilePhoto />
         </Reveal>
       </section>
 
