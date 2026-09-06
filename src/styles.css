@@ -47,38 +47,39 @@
   --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
   --color-sidebar-border: var(--sidebar-border);
   --color-sidebar-ring: var(--sidebar-ring);
-  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
+  --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 :root {
   --radius: 0.75rem;
 
-  --background: oklch(0.16 0.028 258);
-  --foreground: oklch(0.96 0.008 240);
-  --card: oklch(0.21 0.031 258);
-  --card-foreground: oklch(0.96 0.008 240);
-  --popover: oklch(0.2 0.03 258);
-  --popover-foreground: oklch(0.96 0.008 240);
+  --background: oklch(0.95 0.018 225);
+  --foreground: oklch(0.24 0.045 235);
+  --card: oklch(0.985 0.008 225 / 78%);
+  --card-foreground: oklch(0.24 0.045 235);
+  --popover: oklch(0.99 0.006 225);
+  --popover-foreground: oklch(0.24 0.045 235);
 
-  --primary: oklch(0.83 0.16 190);
-  --primary-foreground: oklch(0.18 0.03 258);
-  --secondary: oklch(0.27 0.04 262);
-  --secondary-foreground: oklch(0.95 0.01 240);
-  --muted: oklch(0.26 0.033 260);
-  --muted-foreground: oklch(0.72 0.028 254);
-  --accent: oklch(0.68 0.19 300);
-  --accent-foreground: oklch(0.98 0.005 240);
+  --primary: oklch(0.53 0.12 215);
+  --primary-foreground: oklch(0.99 0.004 220);
+  --secondary: oklch(0.88 0.036 225);
+  --secondary-foreground: oklch(0.28 0.05 235);
+  --muted: oklch(0.9 0.025 225);
+  --muted-foreground: oklch(0.48 0.04 235);
+  --accent: oklch(0.48 0.11 230);
+  --accent-foreground: oklch(0.99 0.004 220);
   --destructive: oklch(0.63 0.22 25);
   --destructive-foreground: oklch(0.98 0.005 240);
 
-  --border: oklch(1 0 0 / 12%);
-  --input: oklch(1 0 0 / 14%);
-  --ring: oklch(0.83 0.16 190);
+  --border: oklch(0.48 0.06 225 / 22%);
+  --input: oklch(0.48 0.06 225 / 25%);
+  --ring: oklch(0.53 0.12 215);
 
-  --neon: oklch(0.83 0.16 190);
-  --neon-2: oklch(0.68 0.19 300);
-  --glass: oklch(1 0 0 / 6%);
+  --neon: oklch(0.62 0.14 205);
+  --neon-2: oklch(0.48 0.11 230);
+  --glass: oklch(1 0 0 / 64%);
 
   --gradient-neon: linear-gradient(120deg, var(--neon), var(--neon-2));
   --gradient-surface: linear-gradient(
@@ -88,7 +89,7 @@
   );
   --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--neon) 24%, transparent),
     0 18px 60px -20px color-mix(in oklab, var(--neon) 45%, transparent);
-  --shadow-soft: 0 20px 60px -30px oklch(0 0 0 / 80%);
+  --shadow-soft: 0 20px 60px -34px oklch(0.3 0.08 230 / 35%);
 
   --chart-1: oklch(0.83 0.16 190);
   --chart-2: oklch(0.68 0.19 300);
@@ -137,6 +138,12 @@
     background-attachment: fixed;
   }
 
+  h1,
+  h2,
+  h3 {
+    font-family: var(--font-display);
+  }
+
   ::selection {
     background: color-mix(in oklab, var(--neon) 35%, transparent);
   }
@@ -147,6 +154,37 @@
   backdrop-filter: blur(14px);
   border: 1px solid var(--border);
   box-shadow: var(--shadow-soft);
+}
+
+@utility profile-frame {
+  background: var(--gradient-neon);
+  box-shadow: var(--shadow-glow);
+}
+
+.profile-orbit {
+  filter: drop-shadow(0 20px 28px color-mix(in oklab, var(--primary) 18%, transparent));
+}
+
+.profile-orbit::before,
+.profile-orbit::after {
+  position: absolute;
+  content: "";
+  border-radius: 9999px;
+  pointer-events: none;
+}
+
+.profile-orbit::before {
+  inset: 0;
+  border-top: 2px solid color-mix(in oklab, var(--primary) 68%, transparent);
+  border-right: 2px solid transparent;
+  animation: orbit-spin 18s linear infinite;
+}
+
+.profile-orbit::after {
+  inset: 12px;
+  border-bottom: 1px solid color-mix(in oklab, var(--neon-2) 55%, transparent);
+  border-left: 1px solid transparent;
+  animation: orbit-spin 24s linear infinite reverse;
 }
 
 @utility text-gradient {
@@ -182,6 +220,12 @@
   }
 }
 
+@keyframes orbit-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
 @keyframes reveal-up {
   from {
     opacity: 0;
@@ -214,5 +258,9 @@
   }
   html {
     scroll-behavior: auto;
+  }
+  .profile-orbit::before,
+  .profile-orbit::after {
+    animation: none;
   }
 }
