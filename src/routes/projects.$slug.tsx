@@ -1,6 +1,7 @@
 import { createFileRoute, Link, notFound } from "@tanstack/react-router";
 import { ArrowLeft, ExternalLink, Github } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
+import { LeetCodeIcon } from "@/components/site/LeetCodeIcon";
 import { PROJECTS, getProject } from "@/data/projects";
 
 export const Route = createFileRoute("/projects/$slug")({
@@ -76,16 +77,27 @@ function ProjectDetail() {
               <ExternalLink className="size-4" aria-hidden="true" /> Live demo
             </a>
           )}
-          {project.repoUrl && (
-            <a
-              href={project.repoUrl}
-              target="_blank"
-              rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
-            >
-              <Github className="size-4" aria-hidden="true" /> Source code
-            </a>
-          )}
+          {project.repoUrl && (() => {
+            const isLeetCode =
+              project.repoLabel?.toLowerCase() === "leetcode" ||
+              Boolean(project.repoUrl?.includes("leetcode.com"));
+            const label = project.repoLabel || (isLeetCode ? "LeetCode" : "Source code");
+            return (
+              <a
+                href={project.repoUrl}
+                target="_blank"
+                rel="noreferrer noopener"
+                className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+              >
+                {isLeetCode ? (
+                  <LeetCodeIcon className="size-4" aria-hidden="true" />
+                ) : (
+                  <Github className="size-4" aria-hidden="true" />
+                )}
+                {label}
+              </a>
+            );
+          })()}
         </div>
       </Reveal>
 

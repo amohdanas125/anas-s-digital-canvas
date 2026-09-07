@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64">
+  <defs>
+    <linearGradient id="bg-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0b1120" />
+      <stop offset="100%" stop-color="#020617" />
+    </linearGradient>
+    <linearGradient id="neon-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" />
+      <stop offset="50%" stop-color="#06b6d4" />
+      <stop offset="100%" stop-color="#818cf8" />
+    </linearGradient>
+    <linearGradient id="border-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#38bdf8" stop-opacity="0.8" />
+      <stop offset="100%" stop-color="#6366f1" stop-opacity="0.4" />
+    </linearGradient>
+    <filter id="glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feDropShadow dx="0" dy="0" stdDeviation="2.5" flood-color="#06b6d4" flood-opacity="0.6" />
+    </filter>
+  </defs>
+
+  <!-- Rounded container -->
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="url(#bg-grad)" stroke="url(#border-grad)" stroke-width="2" />
+
+  <!-- Stylized Geometric "A" -->
+  <path
+    d="M 32 13
+       L 45.5 49
+       H 38.8
+       L 35.3 39
+       H 28.7
+       L 25.2 49
+       H 18.5
+       Z
+       M 32 23.5
+       L 30 33
+       H 34
+       Z"
+    fill="url(#neon-grad)"
+    filter="url(#glow)"
+  />
+</svg>

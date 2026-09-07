@@ -1,7 +1,8 @@
 import { Link, useRouterState } from "@tanstack/react-router";
-import { Menu, X, Github, Linkedin, Instagram, Code2 } from "lucide-react";
+import { Menu, X, Github, Linkedin, Instagram } from "lucide-react";
 import { useEffect, useState, type ReactNode } from "react";
 import { Particles } from "./Particles";
+import { LeetCodeIcon } from "./LeetCodeIcon";
 
 const NAV = [
   { to: "/", label: "About" },
@@ -16,7 +17,7 @@ const NAV = [
 export const SOCIALS = [
   { href: "https://github.com/", label: "GitHub", Icon: Github },
   { href: "https://www.linkedin.com/", label: "LinkedIn", Icon: Linkedin },
-  { href: "https://leetcode.com/", label: "LeetCode", Icon: Code2 },
+  { href: "https://leetcode.com/u/Mohd_Anas26/", label: "LeetCode", Icon: LeetCodeIcon },
   { href: "https://www.instagram.com/", label: "Instagram", Icon: Instagram },
 ];
 
