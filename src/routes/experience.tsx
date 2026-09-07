@@ -51,7 +51,7 @@ function Experience() {
       <ol className="mx-auto mt-12 w-[min(1120px,calc(100%-2rem))] space-y-5">
         {ROLES.map((r, i) => (
           <Reveal key={r.role} delay={i * 100} as="li">
-            <div className="glass relative rounded-2xl p-7">
+            <div className="card-hover glass relative rounded-2xl p-7">
               <div className="flex items-center gap-3">
                 <Briefcase className="size-5 text-primary" aria-hidden="true" />
                 <h2 className="text-xl font-semibold">{r.role}</h2>

@@ -52,7 +52,7 @@ function Education() {
       <ol className="mx-auto mt-12 w-[min(1120px,calc(100%-2rem))] space-y-5">
         {ITEMS.map((item, i) => (
           <Reveal key={item.degree} delay={i * 100} as="li">
-            <div className="glass rounded-2xl p-7">
+            <div className="card-hover glass rounded-2xl p-7">
               <div className="flex flex-wrap items-center gap-3">
                 <GraduationCap className="size-5 text-primary" aria-hidden="true" />
                 <h2 className="text-xl font-semibold">{item.degree}</h2>
