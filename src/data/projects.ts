@@ -65,7 +65,7 @@ export const PROJECTS: Project[] = [
     role: "Fullstack developer",
     year: "2025",
     image: artisan,
-    demoUrl: "https:leatherknp.netlify.app",
+    demoUrl: "https://leatherknp.netlify.app",
     repoUrl: "https://github.com/amohdanas125/",
   },
   {
