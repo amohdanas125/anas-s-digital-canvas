@@ -114,7 +114,7 @@ function About() {
       <section className="mt-20 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {HIGHLIGHTS.map(({ Icon, title, body }, i) => (
           <Reveal key={title} delay={i * 100} as="article">
-            <div className="glass h-full rounded-2xl p-6 transition-transform hover:-translate-y-1">
+            <div className="card-hover glass h-full rounded-2xl p-6">
               <Icon className="size-5 text-primary" aria-hidden="true" />
               <h2 className="mt-4 text-lg font-semibold">{title}</h2>
               <p className="mt-2 text-sm text-muted-foreground">{body}</p>

@@ -44,7 +44,7 @@ function Skills() {
       <div className="mx-auto mt-12 grid w-[min(1120px,calc(100%-2rem))] gap-5 lg:grid-cols-3">
         {GROUPS.map((group, i) => (
           <Reveal key={group.title} delay={i * 100} as="section">
-            <div className="glass h-full rounded-2xl p-6">
+            <div className="card-hover glass h-full rounded-2xl p-6">
               <h2 className="font-mono text-xs tracking-[0.3em] text-primary uppercase">
                 {group.title}
               </h2>
