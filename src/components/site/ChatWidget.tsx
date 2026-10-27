@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { MessageSquare, X, Send, Sparkles, Bot, CheckCircle2 } from "lucide-react";
+import { MessageSquare, X, Send, Sparkles, Bot } from "lucide-react";
 
 interface Message {
   role: "user" | "assistant";
@@ -8,8 +8,8 @@ interface Message {
 
 const QUICK_PROMPTS = [
   "I need a full-stack SaaS MVP built",
-  "What is your tech stack and hourly rate?",
-  "What is your availability for a new project?",
+  "What is your tech stack & availability?",
+  "Can you review my project idea?",
 ];
 
 export function ChatWidget() {
@@ -18,7 +18,7 @@ export function ChatWidget() {
     {
       role: "assistant",
       content:
-        "Hi there! I'm Anas's AI Assistant. Are you looking to build a high-performance web app, SaaS MVP, or commercial e-commerce platform? Feel free to ask about tech stack, rates, or project timelines!",
+        "Hi there! I'm Anas's AI Assistant. Are you looking to build a high-performance web app, SaaS MVP, or commercial e-commerce platform? Feel free to ask about tech stack, project scope, or availability!",
     },
   ]);
   const [input, setInput] = useState("");
@@ -80,7 +80,7 @@ export function ChatWidget() {
         {
           role: "assistant",
           content:
-            "Thank you! Your message has been noted. You can also reach Anas directly at amohdanas125@gmail.com or via WhatsApp/Phone at +91-8318579208.",
+            "Thank you! Your message has been noted. You can also reach Anas directly at amohdanas125@gmail.com or via WhatsApp at +91-8318579208.",
         },
       ]);
     } finally {
@@ -198,7 +198,7 @@ export function ChatWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about project scope, tech stack, or rates..."
+              placeholder="Ask about project scope, tech stack, or timeline..."
               className="flex-1 rounded-full border border-border bg-secondary/30 px-4 py-2 text-xs text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
             />
             <button
