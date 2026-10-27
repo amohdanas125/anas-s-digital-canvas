@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
-import { MessageSquare, X, Send, Sparkles, Bot } from "lucide-react";
+import { MessageSquare, X, Send, Sparkles, Bot, Globe } from "lucide-react";
 
 interface Message {
   role: "user" | "assistant";
@@ -7,9 +7,9 @@ interface Message {
 }
 
 const QUICK_PROMPTS = [
-  "I need a full-stack SaaS MVP built",
-  "What is your tech stack & availability?",
-  "Can you review my project idea?",
+  "🚀 I need a full-stack SaaS MVP built",
+  "🛍️ Luxury E-Commerce Storefront",
+  "⚡ What is your stack & availability?",
 ];
 
 export function ChatWidget() {
@@ -18,7 +18,7 @@ export function ChatWidget() {
     {
       role: "assistant",
       content:
-        "Hi there! I'm Anas's AI Assistant. Are you looking to build a high-performance web app, SaaS MVP, or commercial e-commerce platform? Feel free to ask about tech stack, project scope, or availability!",
+        "Hi there! I'm Anas's AI Assistant. Are you planning a new web app, SaaS MVP, or commercial e-commerce store? Feel free to share what you're building, your name, and where you're reaching out from!",
     },
   ]);
   const [input, setInput] = useState("");
@@ -80,7 +80,7 @@ export function ChatWidget() {
         {
           role: "assistant",
           content:
-            "Thank you! Your message has been noted. You can also reach Anas directly at amohdanas125@gmail.com or via WhatsApp at +91-8318579208.",
+            "Thank you! Your inquiry has been noted. You can also reach Anas directly at amohdanas125@gmail.com or via WhatsApp at +91-8318579208.",
         },
       ]);
     } finally {
@@ -97,24 +97,30 @@ export function ChatWidget() {
     <div className="fixed bottom-6 right-6 z-50">
       {/* Floating Action Trigger Button */}
       {!isOpen && (
-        <button
-          type="button"
-          onClick={() => setIsOpen(true)}
-          aria-label="Open AI Assistant Chat"
-          className="group relative flex items-center gap-3 rounded-full border border-primary/40 bg-background/80 px-5 py-3 text-sm font-medium text-foreground shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-primary hover:scale-105 hover:shadow-[0_0_25px_var(--neon)]"
-        >
-          <span className="relative flex size-2.5">
-            <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
-            <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
-          </span>
-          <MessageSquare className="size-4 text-primary transition-transform group-hover:rotate-12" />
-          <span className="font-mono text-xs tracking-wider uppercase">Chat with AI</span>
-        </button>
+        <div className="flex items-center gap-3">
+          <div className="hidden sm:flex items-center gap-1.5 rounded-full border border-primary/30 bg-background/90 px-3.5 py-1.5 text-xs font-mono text-muted-foreground shadow-lg backdrop-blur-md animate-fade-in">
+            <span className="size-2 rounded-full bg-emerald-400 animate-ping" />
+            <span className="text-foreground font-medium">Anas AI</span> is online
+          </div>
+          <button
+            type="button"
+            onClick={() => setIsOpen(true)}
+            aria-label="Open AI Assistant Chat"
+            className="group relative flex items-center gap-3 rounded-full border border-primary/50 bg-background/90 px-5 py-3 text-sm font-medium text-foreground shadow-2xl backdrop-blur-xl transition-all duration-300 hover:border-primary hover:scale-105 hover:shadow-[0_0_30px_var(--neon)]"
+          >
+            <span className="relative flex size-2.5">
+              <span className="absolute inline-flex size-full animate-ping rounded-full bg-emerald-400 opacity-75" />
+              <span className="relative inline-flex size-2.5 rounded-full bg-emerald-500" />
+            </span>
+            <MessageSquare className="size-4 text-primary transition-transform group-hover:rotate-12" />
+            <span className="font-mono text-xs tracking-wider uppercase">Chat with AI</span>
+          </button>
+        </div>
       )}
 
       {/* Interactive Chat Window */}
       {isOpen && (
-        <div className="glass fixed bottom-4 right-4 z-50 flex h-[540px] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-3xl border border-border/80 shadow-2xl sm:bottom-6 sm:right-6 sm:w-96">
+        <div className="glass fixed bottom-4 right-4 z-50 flex h-[550px] w-[calc(100vw-2rem)] max-w-sm flex-col overflow-hidden rounded-3xl border border-border/80 shadow-2xl sm:bottom-6 sm:right-6 sm:w-[400px]">
           {/* Header */}
           <div className="flex items-center justify-between border-b border-border/60 bg-secondary/30 px-5 py-4 backdrop-blur-md">
             <div className="flex items-center gap-3">
@@ -128,7 +134,7 @@ export function ChatWidget() {
                 </div>
                 <p className="flex items-center gap-1.5 font-mono text-[0.65rem] text-muted-foreground uppercase tracking-wider">
                   <span className="size-1.5 rounded-full bg-emerald-400" />
-                  Online · Replies &lt; 2 hrs
+                  Online · Instant Response · IST UTC+5:30
                 </p>
               </div>
             </div>
@@ -198,7 +204,7 @@ export function ChatWidget() {
               type="text"
               value={input}
               onChange={(e) => setInput(e.target.value)}
-              placeholder="Ask about project scope, tech stack, or timeline..."
+              placeholder="Tell me what you're building, your name, or country..."
               className="flex-1 rounded-full border border-border bg-secondary/30 px-4 py-2 text-xs text-foreground placeholder:text-muted-foreground focus:border-primary focus:outline-none"
             />
             <button
