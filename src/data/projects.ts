@@ -1,8 +1,8 @@
 import wanderlust from "@/assets/project-wanderlust.jpg";
-import ecommerce from "@/assets/project-ecommerce.jpg";
+import ecommerce from "@/assets/project-ecommerce.png";
 import artisan from "@/assets/project-artisan.jpg";
-import bizmatics from "@/assets/project-bizmatics.jpg";
-import perfume from "@/assets/project-perfume.jpg";
+import bizmatics from "@/assets/project-bizmatics.png";
+import perfume from "@/assets/project-perfume.png";
 import portfolio from "@/assets/project-portfolio.jpg";
 
 export type Project = {
