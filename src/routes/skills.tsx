@@ -87,24 +87,24 @@ function Skills() {
         title="Skills & Technologies"
         subtitle="The modern, battle-tested stack I use to architect, build, and ship high-performance digital products."
       />
-      <div className="mx-auto mt-12 grid w-[min(1120px,calc(100%-2rem))] gap-5 sm:grid-cols-2">
+      <div className="mx-auto mt-12 grid w-[min(1120px,calc(100%-2rem))] gap-6 sm:grid-cols-2">
         {GROUPS.map((group, i) => (
           <Reveal key={group.title} delay={i * 90} as="section">
-            <div className="card-hover glass h-full rounded-2xl p-7 flex flex-col justify-between">
+            <div className="neu-card h-full rounded-3xl p-7 flex flex-col justify-between">
               <div>
                 <div className="flex items-center justify-between">
-                  <h2 className="font-mono text-xs tracking-[0.3em] text-primary uppercase font-medium">
+                  <h2 className="font-mono text-xs tracking-[0.3em] text-primary uppercase font-semibold">
                     {group.title}
                   </h2>
                   <span className="font-mono text-[0.65rem] tracking-wider text-muted-foreground uppercase">
                     {group.category}
                   </span>
                 </div>
-                <ul className="mt-6 flex flex-wrap gap-2">
+                <ul className="mt-6 flex flex-wrap gap-2.5">
                   {group.items.map((item) => (
                     <li
                       key={item}
-                      className="rounded-full border border-border bg-secondary/30 px-3.5 py-1.5 text-xs font-medium text-secondary-foreground transition-all duration-200 hover:border-primary hover:text-primary hover:bg-primary/5"
+                      className="rounded-full neu-pressed-sm px-3.5 py-1.5 text-xs font-medium text-foreground transition-all duration-200 hover:text-primary"
                     >
                       {item}
                     </li>

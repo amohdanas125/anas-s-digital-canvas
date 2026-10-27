@@ -34,81 +34,106 @@
   --color-neon: var(--neon);
   --color-neon-2: var(--neon-2);
   --color-glass: var(--glass);
-  --color-chart-1: var(--chart-1);
-  --color-chart-2: var(--chart-2);
-  --color-chart-3: var(--chart-3);
-  --color-chart-4: var(--chart-4);
-  --color-chart-5: var(--chart-5);
-  --color-sidebar: var(--sidebar);
-  --color-sidebar-foreground: var(--sidebar-foreground);
-  --color-sidebar-primary: var(--sidebar-primary);
-  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
-  --color-sidebar-accent: var(--sidebar-accent);
-  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
-  --color-sidebar-border: var(--sidebar-border);
-  --color-sidebar-ring: var(--sidebar-ring);
   --font-sans: "DM Sans", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, monospace;
 }
 
 :root {
-  --radius: 0.75rem;
+  color-scheme: light;
+  --radius: 1rem;
 
-  --background: oklch(0.95 0.018 225);
-  --foreground: oklch(0.24 0.045 235);
-  --card: oklch(0.985 0.008 225 / 78%);
-  --card-foreground: oklch(0.24 0.045 235);
-  --popover: oklch(0.99 0.006 225);
-  --popover-foreground: oklch(0.24 0.045 235);
+  /* Neomorphic Porcelain Surface (Light Theme) */
+  --background: #edf2f7;
+  --foreground: #1e293b;
+  --card: #edf2f7;
+  --card-foreground: #1e293b;
+  --popover: #f3f6fa;
+  --popover-foreground: #1e293b;
 
-  --primary: oklch(0.53 0.12 215);
-  --primary-foreground: oklch(0.99 0.004 220);
-  --secondary: oklch(0.88 0.036 225);
-  --secondary-foreground: oklch(0.28 0.05 235);
-  --muted: oklch(0.9 0.025 225);
-  --muted-foreground: oklch(0.48 0.04 235);
-  --accent: oklch(0.48 0.11 230);
-  --accent-foreground: oklch(0.99 0.004 220);
-  --destructive: oklch(0.63 0.22 25);
-  --destructive-foreground: oklch(0.98 0.005 240);
+  --primary: #0284c7;
+  --primary-foreground: #ffffff;
+  --secondary: #e2e8f0;
+  --secondary-foreground: #1e293b;
+  --muted: #e2e8f0;
+  --muted-foreground: #64748b;
+  --accent: #0284c7;
+  --accent-foreground: #ffffff;
+  --destructive: #ef4444;
+  --destructive-foreground: #ffffff;
 
-  --border: oklch(0.48 0.06 225 / 22%);
-  --input: oklch(0.48 0.06 225 / 25%);
-  --ring: oklch(0.53 0.12 215);
+  --border: rgba(166, 180, 200, 0.4);
+  --input: rgba(166, 180, 200, 0.45);
+  --ring: #0284c7;
 
-  --neon: oklch(0.62 0.14 205);
-  --neon-2: oklch(0.48 0.11 230);
-  --glass: oklch(1 0 0 / 64%);
+  --neon: #0284c7;
+  --neon-2: #6366f1;
+  --glass: rgba(237, 242, 247, 0.88);
 
-  --gradient-neon: linear-gradient(120deg, var(--neon), var(--neon-2));
-  --gradient-surface: linear-gradient(
-    160deg,
-    color-mix(in oklab, var(--neon) 8%, transparent),
-    transparent 60%
-  );
-  --shadow-glow: 0 0 0 1px color-mix(in oklab, var(--neon) 24%, transparent),
-    0 18px 60px -20px color-mix(in oklab, var(--neon) 45%, transparent);
-  --shadow-soft: 0 20px 60px -34px oklch(0.3 0.08 230 / 35%);
+  --gradient-neon: linear-gradient(135deg, #0284c7, #6366f1);
+  --gradient-surface: linear-gradient(145deg, #f7faff, #e2e8f0);
 
-  --chart-1: oklch(0.83 0.16 190);
-  --chart-2: oklch(0.68 0.19 300);
-  --chart-3: oklch(0.75 0.15 230);
-  --chart-4: oklch(0.8 0.16 150);
-  --chart-5: oklch(0.78 0.17 60);
+  /* Neomorphic 3D Shadow Tokens (Light Porcelain) */
+  --neu-bg: #edf2f7;
+  --neu-border: rgba(255, 255, 255, 0.8);
+  --neu-flat: 8px 8px 18px #c8d3e0, -8px -8px 18px #ffffff;
+  --neu-flat-sm: 4px 4px 10px #c8d3e0, -4px -4px 10px #ffffff;
+  --neu-flat-lg: 14px 14px 32px #c0ccdc, -14px -14px 32px #ffffff;
+  --neu-pressed: inset 4px 4px 8px #c8d3e0, inset -4px -4px 8px #ffffff;
+  --neu-pressed-sm: inset 2px 2px 5px #c8d3e0, inset -2px -2px 5px #ffffff;
+  --neu-convex: linear-gradient(145deg, #f7faff, #e2e8f0);
+  --neu-concave: linear-gradient(145deg, #e2e8f0, #f7faff);
 
-  --sidebar: oklch(0.19 0.03 258);
-  --sidebar-foreground: oklch(0.96 0.008 240);
-  --sidebar-primary: oklch(0.83 0.16 190);
-  --sidebar-primary-foreground: oklch(0.18 0.03 258);
-  --sidebar-accent: oklch(0.27 0.04 262);
-  --sidebar-accent-foreground: oklch(0.96 0.008 240);
-  --sidebar-border: oklch(1 0 0 / 10%);
-  --sidebar-ring: oklch(0.83 0.16 190);
+  --shadow-soft: 8px 8px 18px #c8d3e0, -8px -8px 18px #ffffff;
+  --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.3);
 }
 
 .dark {
   color-scheme: dark;
+
+  /* Neomorphic Matte Slate Surface (Dark Theme) */
+  --background: #14171d;
+  --foreground: #f1f5f9;
+  --card: #14171d;
+  --card-foreground: #f1f5f9;
+  --popover: #191d24;
+  --popover-foreground: #f1f5f9;
+
+  --primary: #38bdf8;
+  --primary-foreground: #0b1120;
+  --secondary: #1c212a;
+  --secondary-foreground: #f1f5f9;
+  --muted: #1c212a;
+  --muted-foreground: #94a3b8;
+  --accent: #38bdf8;
+  --accent-foreground: #0b1120;
+  --destructive: #f87171;
+  --destructive-foreground: #ffffff;
+
+  --border: rgba(255, 255, 255, 0.08);
+  --input: rgba(255, 255, 255, 0.08);
+  --ring: #38bdf8;
+
+  --neon: #38bdf8;
+  --neon-2: #818cf8;
+  --glass: rgba(20, 23, 29, 0.88);
+
+  --gradient-neon: linear-gradient(135deg, #38bdf8, #818cf8);
+  --gradient-surface: linear-gradient(145deg, #181c23, #111419);
+
+  /* Neomorphic 3D Shadow Tokens (Dark Matte Slate) */
+  --neu-bg: #14171d;
+  --neu-border: rgba(255, 255, 255, 0.05);
+  --neu-flat: 8px 8px 20px #0a0c0f, -6px -6px 16px rgba(255, 255, 255, 0.04);
+  --neu-flat-sm: 4px 4px 10px #0a0c0f, -3px -3px 8px rgba(255, 255, 255, 0.035);
+  --neu-flat-lg: 14px 14px 34px #07090b, -10px -10px 24px rgba(255, 255, 255, 0.05);
+  --neu-pressed: inset 4px 4px 8px #0a0c0f, inset -3px -3px 8px rgba(255, 255, 255, 0.04);
+  --neu-pressed-sm: inset 2px 2px 5px #0a0c0f, inset -2px -2px 5px rgba(255, 255, 255, 0.035);
+  --neu-convex: linear-gradient(145deg, #181c23, #111419);
+  --neu-concave: linear-gradient(145deg, #111419, #181c23);
+
+  --shadow-soft: 8px 8px 20px #0a0c0f, -6px -6px 16px rgba(255, 255, 255, 0.04);
+  --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.35);
 }
 
 @layer base {
@@ -124,18 +149,7 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
-    background-image:
-      radial-gradient(
-        60rem 40rem at 10% -10%,
-        color-mix(in oklab, var(--neon) 14%, transparent),
-        transparent 70%
-      ),
-      radial-gradient(
-        50rem 36rem at 100% 0%,
-        color-mix(in oklab, var(--neon-2) 14%, transparent),
-        transparent 70%
-      );
-    background-attachment: fixed;
+    transition: background-color 0.3s ease, color 0.3s ease;
   }
 
   h1,
@@ -149,11 +163,93 @@
   }
 }
 
+/* =========================================================
+   NEOMORPHIC CORE UTILITIES
+   ========================================================= */
+
+@utility neu-flat {
+  background: var(--neu-bg);
+  box-shadow: var(--neu-flat);
+  border: 1px solid var(--neu-border);
+}
+
+@utility neu-flat-sm {
+  background: var(--neu-bg);
+  box-shadow: var(--neu-flat-sm);
+  border: 1px solid var(--neu-border);
+}
+
+@utility neu-flat-lg {
+  background: var(--neu-bg);
+  box-shadow: var(--neu-flat-lg);
+  border: 1px solid var(--neu-border);
+}
+
+@utility neu-pressed {
+  background: var(--neu-bg);
+  box-shadow: var(--neu-pressed);
+  border: 1px solid var(--neu-border);
+}
+
+@utility neu-pressed-sm {
+  background: var(--neu-bg);
+  box-shadow: var(--neu-pressed-sm);
+  border: 1px solid var(--neu-border);
+}
+
+@utility neu-convex {
+  background: var(--neu-convex);
+  box-shadow: var(--neu-flat);
+  border: 1px solid var(--neu-border);
+}
+
+@utility neu-convex-sm {
+  background: var(--neu-convex);
+  box-shadow: var(--neu-flat-sm);
+  border: 1px solid var(--neu-border);
+}
+
+@utility neu-concave {
+  background: var(--neu-concave);
+  box-shadow: var(--neu-flat);
+  border: 1px solid var(--neu-border);
+}
+
+@utility neu-button {
+  background: var(--neu-convex);
+  box-shadow: var(--neu-flat-sm);
+  border: 1px solid var(--neu-border);
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover {
+    box-shadow: var(--neu-flat);
+    transform: translateY(-2px);
+  }
+
+  &:active {
+    box-shadow: var(--neu-pressed-sm);
+    transform: translateY(1px);
+  }
+}
+
+@utility neu-card {
+  background: var(--neu-bg);
+  box-shadow: var(--neu-flat);
+  border: 1px solid var(--neu-border);
+  transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover {
+    box-shadow: var(--neu-flat-lg);
+    transform: translateY(-3px);
+  }
+}
+
+/* Backward compatibility with .glass */
 @utility glass {
   background: var(--glass);
   backdrop-filter: blur(14px);
-  border: 1px solid var(--border);
-  box-shadow: var(--shadow-soft);
+  border: 1px solid var(--neu-border);
+  box-shadow: var(--neu-flat-sm);
 }
 
 @utility profile-frame {
@@ -162,7 +258,7 @@
 }
 
 .profile-orbit {
-  filter: drop-shadow(0 20px 28px color-mix(in oklab, var(--primary) 18%, transparent));
+  filter: drop-shadow(0 15px 25px color-mix(in oklab, var(--primary) 20%, transparent));
 }
 
 .profile-orbit::before,
@@ -197,10 +293,7 @@
   &:hover {
     transform: translateY(-4px);
     border-color: color-mix(in oklab, var(--primary) 45%, transparent);
-    background: color-mix(in oklab, var(--neon) 8%, var(--glass));
-    box-shadow:
-      0 0 0 1px color-mix(in oklab, var(--neon) 20%, transparent),
-      0 16px 44px -18px color-mix(in oklab, var(--neon) 40%, transparent);
+    box-shadow: var(--neu-flat-lg);
   }
 }
 
@@ -220,20 +313,13 @@
   transition: color 0.25s ease, text-shadow 0.25s ease;
 }
 
-@utility grid-lines {
-  background-image:
-    linear-gradient(color-mix(in oklab, var(--neon) 8%, transparent) 1px, transparent 1px),
-    linear-gradient(90deg, color-mix(in oklab, var(--neon) 8%, transparent) 1px, transparent 1px);
-  background-size: 60px 60px;
-}
-
 @keyframes float-slow {
   0%,
   100% {
     transform: translateY(0);
   }
   50% {
-    transform: translateY(-12px);
+    transform: translateY(-10px);
   }
 }
 

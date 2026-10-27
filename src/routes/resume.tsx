@@ -84,7 +84,7 @@ const FREELANCE = [
 function SectionTitle({ icon: Icon, children }: { icon: typeof BookOpen; children: string }) {
   return (
     <div className="flex items-center gap-3">
-      <span className="inline-flex rounded-full border border-border p-2 text-primary">
+      <span className="size-9 rounded-2xl neu-convex-sm flex items-center justify-center text-primary">
         <Icon className="size-4" aria-hidden="true" />
       </span>
       <h2 className="text-2xl font-semibold tracking-tight">
@@ -107,7 +107,7 @@ function Resume() {
         <button
           type="button"
           onClick={() => window.print()}
-          className="inline-flex items-center gap-2 rounded-full border border-border px-5 py-2.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+          className="inline-flex items-center gap-2 rounded-full neu-button px-5 py-2.5 text-xs font-mono tracking-wider uppercase text-foreground cursor-pointer"
         >
           <Printer className="size-4" aria-hidden="true" />
           Print / Save as PDF
@@ -122,17 +122,17 @@ function Resume() {
             Computer Science (AI/ML) · Allenhouse Institute of Technology
           </p>
         </Reveal>
-        <div className="mt-7 grid gap-5 md:grid-cols-3">
+        <div className="mt-7 grid gap-6 md:grid-cols-3">
           {CURRICULUM.map((group, i) => (
             <Reveal key={group.title} delay={i * 100} as="article">
-              <div className="card-hover glass h-full rounded-2xl p-6">
-                <h3 className="font-mono text-xs tracking-[0.3em] text-primary uppercase">
+              <div className="neu-card h-full rounded-3xl p-6">
+                <h3 className="font-mono text-xs tracking-[0.3em] text-primary uppercase font-semibold">
                   {group.title}
                 </h3>
                 <ul className="mt-5 space-y-2.5">
                   {group.courses.map((course) => (
                     <li key={course} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
                       {course}
                     </li>
                   ))}
@@ -148,32 +148,34 @@ function Resume() {
         <Reveal>
           <SectionTitle icon={FolderGit2}>Featured Projects</SectionTitle>
         </Reveal>
-        <div className="mt-7 grid gap-5 sm:grid-cols-2">
+        <div className="mt-7 grid gap-6 sm:grid-cols-2">
           {PROJECTS.map((p, i) => (
             <Reveal key={p.slug} delay={i * 80} as="article">
               <Link
                 to="/projects/$slug"
                 params={{ slug: p.slug }}
-                className="card-hover glass group block h-full rounded-2xl p-6"
+                className="neu-card group block h-full rounded-3xl p-6"
               >
                 <div className="flex items-start justify-between gap-3">
                   <div>
-                    <h3 className="text-lg font-semibold">{p.name}</h3>
+                    <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors">
+                      {p.name}
+                    </h3>
                     <p className="mt-1 font-mono text-[0.65rem] tracking-[0.25em] text-muted-foreground uppercase">
                       {p.tagline} · {p.year}
                     </p>
                   </div>
                   <ArrowUpRight
-                    className="size-4 shrink-0 text-muted-foreground transition-colors group-hover:text-primary"
+                    className="size-5 shrink-0 text-muted-foreground transition-all group-hover:text-primary group-hover:translate-x-0.5 group-hover:-translate-y-0.5"
                     aria-hidden="true"
                   />
                 </div>
-                <p className="mt-3 text-sm text-muted-foreground">{p.blurb}</p>
+                <p className="mt-3 text-sm text-muted-foreground leading-relaxed">{p.blurb}</p>
                 <ul className="mt-4 flex flex-wrap gap-2">
                   {p.tech.map((t) => (
                     <li
                       key={t}
-                      className="rounded-full border border-border bg-secondary/40 px-2.5 py-1 text-xs text-secondary-foreground"
+                      className="rounded-full neu-pressed-sm px-3 py-1 font-mono text-[0.7rem] tracking-wider text-muted-foreground uppercase"
                     >
                       {t}
                     </li>
@@ -190,21 +192,23 @@ function Resume() {
         <Reveal>
           <SectionTitle icon={Briefcase}>Freelance Engagements</SectionTitle>
         </Reveal>
-        <ol className="mt-7 space-y-5">
+        <ol className="mt-7 space-y-6">
           {FREELANCE.map((f, i) => (
             <Reveal key={f.role} delay={i * 100} as="li">
-              <div className="card-hover glass rounded-2xl p-7">
+              <div className="neu-card rounded-3xl p-7 sm:p-8">
                 <div className="flex flex-wrap items-center gap-3">
-                  <Briefcase className="size-5 text-primary" aria-hidden="true" />
-                  <h3 className="text-xl font-semibold">{f.role}</h3>
+                  <div className="flex size-10 shrink-0 items-center justify-center rounded-2xl neu-convex-sm text-primary">
+                    <Briefcase className="size-5" aria-hidden="true" />
+                  </div>
+                  <h3 className="text-xl font-semibold text-foreground">{f.role}</h3>
                 </div>
                 <p className="mt-2 font-mono text-xs tracking-[0.2em] text-muted-foreground uppercase">
                   {f.org}
                 </p>
                 <ul className="mt-4 space-y-2.5">
                   {f.points.map((point) => (
-                    <li key={point} className="flex items-start gap-2 text-sm text-muted-foreground">
-                      <span className="mt-2 size-1 shrink-0 rounded-full bg-primary" aria-hidden="true" />
+                    <li key={point} className="flex items-start gap-2.5 text-sm text-muted-foreground">
+                      <span className="mt-2 size-1.5 shrink-0 rounded-full bg-primary" aria-hidden="true" />
                       {point}
                     </li>
                   ))}

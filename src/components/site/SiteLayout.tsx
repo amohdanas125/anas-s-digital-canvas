@@ -3,6 +3,7 @@ import { Menu, X, Github, Linkedin, Instagram, ArrowUpRight } from "lucide-react
 import { useEffect, useState, type ReactNode } from "react";
 import { Particles } from "./Particles";
 import { LeetCodeIcon } from "./LeetCodeIcon";
+import { ThemeToggle } from "./ThemeToggle";
 import mainPhoto from "@/assets/main.jpg";
 
 const NAV = [
@@ -33,13 +34,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
     <div className="relative flex min-h-screen flex-col">
       <Particles />
 
-      {/* Floating Pill Header (Anima Jain Style) */}
+      {/* Floating 3D Neomorphic Capsule Header */}
       <header className="fixed inset-x-0 top-0 z-50 pointer-events-none">
         <div className="mx-auto mt-4 flex w-[min(1120px,calc(100%-2rem))] items-center justify-between">
-          {/* Left Pill: Identity Avatar + Name + Live Status */}
+          {/* Left Capsule: Identity Avatar + Name + Live Status */}
           <Link
             to="/"
-            className="pointer-events-auto group flex items-center gap-2.5 rounded-full glass px-3.5 py-1.5 border border-border/80 shadow-lg transition-all duration-300 hover:border-primary/60 hover:scale-102 hover:shadow-[0_0_20px_rgba(var(--neon),0.25)]"
+            className="pointer-events-auto group flex items-center gap-2.5 rounded-full neu-convex-sm px-3.5 py-1.5 transition-all duration-300 hover:scale-102"
           >
             <img
               src={mainPhoto}
@@ -49,25 +50,75 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             <div className="flex flex-col text-left leading-tight">
               <div className="flex items-center gap-1.5">
                 <span className="font-semibold text-xs tracking-tight text-foreground">Mohd Anas</span>
-                <span className="size-1.5 rounded-full bg-emerald-400 animate-pulse" />
+                <span className="size-1.5 rounded-full bg-emerald-500 animate-pulse" />
               </div>
               <span className="text-[10px] text-muted-foreground font-mono">Full-Stack &amp; AI</span>
             </div>
           </Link>
 
-          {/* Right Pill: Capsule Navigation Links + CTA Button */}
+          {/* Right Capsule: Neomorphic Navigation Links + Theme Switcher + CTA */}
           <nav
             aria-label="Main"
-            className="pointer-events-auto hidden items-center gap-1.5 rounded-full glass px-2.5 py-1.5 border border-border/80 shadow-lg md:flex"
+            className="pointer-events-auto hidden items-center gap-1.5 rounded-full neu-convex-sm px-3 py-1.5 md:flex"
           >
             {NAV.map((item) => (
               <Link
                 key={item.to}
                 to={item.to}
-                className="rounded-full px-3.5 py-1 text-xs font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-secondary/50"
+                className="rounded-full px-3.5 py-1 text-xs font-medium text-muted-foreground transition-all duration-200 hover:text-foreground hover:bg-secondary/40"
                 activeOptions={{ exact: item.to === "/" }}
                 activeProps={{
-                  className: "!text-primary !bg-primary/10 border border-primary/30 font-semibold shadow-[0_0_12px_rgba(var(--neon),0.2)]",
+                  className: "!text-primary neu-pressed-sm !border-primary/20 font-semibold shadow-inner",
+                }}
+              >
+                {item.label}
+              </Link>
+            ))}
+
+            <div className="h-4 w-px bg-border/60 mx-1" />
+
+            {/* 3D Neomorphic Light/Dark Switcher */}
+            <ThemeToggle />
+
+            {/* Hire Me CTA Button */}
+            <Link
+              to="/contact"
+              className="ml-1 inline-flex items-center gap-1 rounded-full bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground neu-button hover:opacity-95 transition-all"
+            >
+              Hire Me
+              <ArrowUpRight className="size-3" />
+            </Link>
+          </nav>
+
+          {/* Mobile Actions: Theme Switcher & Menu Button */}
+          <div className="flex items-center gap-2 pointer-events-auto md:hidden">
+            <ThemeToggle />
+            <button
+              type="button"
+              aria-label={open ? "Close menu" : "Open menu"}
+              aria-expanded={open}
+              onClick={() => setOpen((v) => !v)}
+              className="rounded-full neu-convex-sm p-2.5 text-foreground transition-colors hover:text-primary"
+            >
+              {open ? <X className="size-4" /> : <Menu className="size-4" />}
+            </button>
+          </div>
+        </div>
+
+        {/* Mobile Dropdown Menu */}
+        {open && (
+          <nav
+            aria-label="Mobile"
+            className="pointer-events-auto mx-auto mt-2 flex w-[min(1120px,calc(100%-2rem))] flex-col gap-2 rounded-3xl neu-convex p-5 md:hidden animate-fade-in"
+          >
+            {NAV.map((item) => (
+              <Link
+                key={item.to}
+                to={item.to}
+                className="rounded-2xl px-4 py-2.5 text-sm font-medium text-muted-foreground transition-all hover:text-foreground hover:neu-pressed-sm"
+                activeOptions={{ exact: item.to === "/" }}
+                activeProps={{
+                  className: "!text-primary neu-pressed-sm font-semibold",
                 }}
               >
                 {item.label}
@@ -75,45 +126,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             ))}
             <Link
               to="/contact"
-              className="ml-1 inline-flex items-center gap-1 rounded-full bg-primary px-3.5 py-1 text-xs font-medium text-primary-foreground shadow-sm hover:opacity-90 transition-all hover:scale-105"
-            >
-              Hire Me
-              <ArrowUpRight className="size-3" />
-            </Link>
-          </nav>
-
-          {/* Mobile Menu Button */}
-          <button
-            type="button"
-            aria-label={open ? "Close menu" : "Open menu"}
-            aria-expanded={open}
-            onClick={() => setOpen((v) => !v)}
-            className="pointer-events-auto rounded-full glass border border-border p-2.5 text-foreground transition-colors hover:text-primary md:hidden shadow-lg"
-          >
-            {open ? <X className="size-4" /> : <Menu className="size-4" />}
-          </button>
-        </div>
-
-        {/* Mobile Dropdown Menu */}
-        {open && (
-          <nav
-            aria-label="Mobile"
-            className="pointer-events-auto glass mx-auto mt-2 flex w-[min(1120px,calc(100%-2rem))] flex-col gap-2 rounded-3xl p-5 border border-border/80 shadow-2xl md:hidden animate-fade-in"
-          >
-            {NAV.map((item) => (
-              <Link
-                key={item.to}
-                to={item.to}
-                className="rounded-2xl px-4 py-2 text-sm font-medium text-muted-foreground transition-colors hover:text-primary hover:bg-secondary/40"
-                activeProps={{ className: "!text-primary !bg-primary/10 font-semibold" }}
-                activeOptions={{ exact: item.to === "/" }}
-              >
-                {item.label}
-              </Link>
-            ))}
-            <Link
-              to="/contact"
-              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-2xl bg-primary py-2.5 text-sm font-medium text-primary-foreground"
+              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-2xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground neu-button"
             >
               Hire Me / Let's Talk
               <ArrowUpRight className="size-4" />
@@ -124,12 +137,13 @@ export function SiteLayout({ children }: { children: ReactNode }) {
 
       <main className="page-enter flex-1 pt-32 pb-20">{children}</main>
 
-      <footer className="border-t border-border/60 py-8">
+      {/* Neomorphic Footer */}
+      <footer className="border-t border-border/40 py-8">
         <div className="mx-auto flex w-[min(1120px,calc(100%-2rem))] flex-col items-center justify-between gap-4 sm:flex-row">
           <p className="font-mono text-xs tracking-widest text-muted-foreground uppercase">
             © {new Date().getFullYear()} Mohd Anas · Full-Stack &amp; AI Engineer
           </p>
-          <ul className="flex items-center gap-4">
+          <ul className="flex items-center gap-3">
             {SOCIALS.map(({ href, label, Icon }) => (
               <li key={label}>
                 <a
@@ -137,7 +151,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
                   target="_blank"
                   rel="noreferrer noopener"
                   aria-label={label}
-                  className="rounded-full border border-border p-2 text-muted-foreground transition-colors hover:border-primary hover:text-primary inline-flex"
+                  className="size-9 rounded-full neu-button flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
                 >
                   <Icon className="size-4" aria-hidden="true" />
                 </a>

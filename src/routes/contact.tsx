@@ -44,7 +44,7 @@ const DETAILS = [
 ];
 
 const fieldClass =
-  "w-full rounded-xl border border-input bg-background/40 px-4 py-3 text-sm outline-none transition-colors placeholder:text-muted-foreground focus:border-primary focus:ring-2 focus:ring-ring/40";
+  "w-full rounded-2xl neu-pressed px-4 py-3 text-sm text-foreground outline-none transition-all placeholder:text-muted-foreground focus:ring-1 focus:ring-primary/40";
 
 function Contact() {
   const [errors, setErrors] = useState<Record<string, string>>({});
@@ -81,63 +81,70 @@ function Contact() {
       <PageHeader
         eyebrow="Say hello"
         title="Contact"
-        subtitle="Have a project, a role or a question? Send it over — I reply quickly."
+        subtitle="Have a project, an MVP to build or a question? Send it over — I reply quickly within 2 hours."
       />
 
-      <div className="mx-auto mt-12 grid w-[min(1120px,calc(100%-2rem))] gap-5 lg:grid-cols-[.8fr_1.2fr]">
+      <div className="mx-auto mt-12 grid w-[min(1120px,calc(100%-2rem))] gap-6 lg:grid-cols-[.8fr_1.2fr]">
         <Reveal as="section">
-          <div className="glass h-full rounded-2xl p-7">
-            <ul className="space-y-5">
+          <div className="neu-flat-sm h-full rounded-3xl p-7 flex flex-col justify-between">
+            <ul className="space-y-6">
               {DETAILS.map(({ Icon, label, value, href }) => (
-                <li key={label} className="flex items-start gap-3">
-                  <Icon className="mt-0.5 size-4 text-primary" aria-hidden="true" />
+                <li key={label} className="flex items-start gap-3.5">
+                  <div className="flex size-9 shrink-0 items-center justify-center rounded-xl neu-convex-sm text-primary">
+                    <Icon className="size-4" aria-hidden="true" />
+                  </div>
                   <div>
                     <p className="font-mono text-[0.65rem] tracking-[0.3em] text-muted-foreground uppercase">
                       {label}
                     </p>
                     {href ? (
-                      <a href={href} className="text-sm transition-colors hover:text-primary">
+                      <a href={href} className="text-sm font-medium transition-colors hover:text-primary">
                         {value}
                       </a>
                     ) : (
-                      <p className="text-sm">{value}</p>
+                      <p className="text-sm font-medium">{value}</p>
                     )}
                   </div>
                 </li>
               ))}
             </ul>
 
-            <ul className="mt-8 flex gap-3">
-              {SOCIALS.map(({ href, label, Icon }) => (
-                <li key={label}>
-                  <a
-                    href={href}
-                    target="_blank"
-                    rel="noreferrer noopener"
-                    aria-label={label}
-                    className="inline-flex rounded-full border border-border p-2.5 text-muted-foreground transition-colors hover:border-primary hover:text-primary"
-                  >
-                    <Icon className="size-4" aria-hidden="true" />
-                  </a>
-                </li>
-              ))}
-            </ul>
+            <div className="pt-8 border-t border-border/40">
+              <p className="font-mono text-[0.65rem] tracking-[0.3em] text-muted-foreground uppercase mb-3">
+                Connect Directly
+              </p>
+              <ul className="flex gap-3">
+                {SOCIALS.map(({ href, label, Icon }) => (
+                  <li key={label}>
+                    <a
+                      href={href}
+                      target="_blank"
+                      rel="noreferrer noopener"
+                      aria-label={label}
+                      className="size-9 rounded-full neu-button flex items-center justify-center text-muted-foreground hover:text-primary transition-colors"
+                    >
+                      <Icon className="size-4" aria-hidden="true" />
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
           </div>
         </Reveal>
 
         <Reveal delay={110} as="section">
-          <form onSubmit={onSubmit} noValidate className="glass rounded-2xl p-7">
+          <form onSubmit={onSubmit} noValidate className="neu-flat-sm rounded-3xl p-7 sm:p-8">
             <div className="grid gap-5 sm:grid-cols-2">
               <div>
-                <label htmlFor="name" className="mb-2 block text-sm">
-                  Name
+                <label htmlFor="name" className="mb-2 block text-xs font-mono tracking-wider text-muted-foreground uppercase">
+                  Your Name
                 </label>
                 <input
                   id="name"
                   name="name"
                   maxLength={100}
                   className={fieldClass}
-                  placeholder="Your name"
+                  placeholder="e.g. Alex Morgan"
                   aria-invalid={!!errors["name"]}
                 />
                 {errors["name"] && (
@@ -145,8 +152,8 @@ function Contact() {
                 )}
               </div>
               <div>
-                <label htmlFor="email" className="mb-2 block text-sm">
-                  Email
+                <label htmlFor="email" className="mb-2 block text-xs font-mono tracking-wider text-muted-foreground uppercase">
+                  Email Address
                 </label>
                 <input
                   id="email"
@@ -154,7 +161,7 @@ function Contact() {
                   type="email"
                   maxLength={255}
                   className={fieldClass}
-                  placeholder="you@example.com"
+                  placeholder="alex@company.com"
                   aria-invalid={!!errors["email"]}
                 />
                 {errors["email"] && (
@@ -164,7 +171,7 @@ function Contact() {
             </div>
 
             <div className="mt-5">
-              <label htmlFor="subject" className="mb-2 block text-sm">
+              <label htmlFor="subject" className="mb-2 block text-xs font-mono tracking-wider text-muted-foreground uppercase">
                 Subject
               </label>
               <input
@@ -172,7 +179,7 @@ function Contact() {
                 name="subject"
                 maxLength={150}
                 className={fieldClass}
-                placeholder="What's this about?"
+                placeholder="e.g. Full-Stack SaaS MVP Project"
                 aria-invalid={!!errors["subject"]}
               />
               {errors["subject"] && (
@@ -181,16 +188,16 @@ function Contact() {
             </div>
 
             <div className="mt-5">
-              <label htmlFor="message" className="mb-2 block text-sm">
-                Message
+              <label htmlFor="message" className="mb-2 block text-xs font-mono tracking-wider text-muted-foreground uppercase">
+                Project Requirement / Message
               </label>
               <textarea
                 id="message"
                 name="message"
-                rows={6}
+                rows={5}
                 maxLength={1000}
                 className={fieldClass}
-                placeholder="Tell me about your project…"
+                placeholder="Briefly describe what you are looking to build…"
                 aria-invalid={!!errors["message"]}
               />
               {errors["message"] && (
@@ -200,9 +207,9 @@ function Contact() {
 
             <button
               type="submit"
-              className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5 sm:w-auto"
+              className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground neu-button cursor-pointer sm:w-auto"
             >
-              Send message
+              Send Message
             </button>
           </form>
         </Reveal>

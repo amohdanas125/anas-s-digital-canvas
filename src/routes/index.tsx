@@ -90,12 +90,12 @@ function About() {
 
   return (
     <div className="mx-auto w-[min(1120px,calc(100%-2rem))]">
-      {/* Hero Stage (Anima Jain Inspired) */}
+      {/* Hero Stage (3D Neomorphic + Tactile Elevation) */}
       <section className="relative min-h-[75vh] flex flex-col justify-center">
         <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_.8fr]">
           <Reveal>
-            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-mono tracking-widest text-primary uppercase shadow-[0_0_15px_rgba(var(--neon),0.15)]">
-              <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+            <div className="inline-flex items-center gap-2 rounded-full neu-pressed-sm px-4 py-1.5 text-xs font-mono tracking-widest text-primary uppercase">
+              <span className="size-2 rounded-full bg-emerald-500 animate-pulse" />
               Available for Freelance &amp; Contract MVPs
             </div>
 
@@ -116,14 +116,14 @@ function About() {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href="#work"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-xl shadow-primary/20 transition-all hover:-translate-y-0.5 hover:shadow-primary/30"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground neu-button hover:opacity-95"
               >
                 Explore Selected Work
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full border border-border/80 glass px-6 py-3.5 text-sm font-medium text-foreground transition-all hover:border-primary hover:text-primary hover:-translate-y-0.5"
+                className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-foreground neu-button"
               >
                 Hire Me / Let's Talk
               </Link>
@@ -133,16 +133,17 @@ function About() {
           <Reveal delay={120}>
             <div className="relative">
               <ProfilePhoto />
-              <div className="glass grid-lines relative mx-auto mt-6 max-w-sm overflow-hidden rounded-3xl p-6 border border-border/80 shadow-2xl">
+              {/* Neomorphic Recessed Code Console */}
+              <div className="neu-pressed-sm relative mx-auto mt-6 max-w-sm overflow-hidden rounded-3xl p-6">
                 <div className="font-mono text-xs leading-7 text-muted-foreground">
                   <p>
-                    <span className="text-primary">const</span> engineer = {"{"}
+                    <span className="text-primary font-semibold">const</span> engineer = {"{"}
                   </p>
-                  <p className="pl-5">name: <span className="text-foreground">"Mohd Anas"</span>,</p>
-                  <p className="pl-5">role: <span className="text-foreground">"Full-Stack Web &amp; AI Engineer"</span>,</p>
+                  <p className="pl-5">name: <span className="text-foreground font-medium">"Mohd Anas"</span>,</p>
+                  <p className="pl-5">role: <span className="text-foreground font-medium">"Full-Stack Web &amp; AI Engineer"</span>,</p>
                   <p className="pl-5">coreStack: [<span className="text-foreground">"Next.js"</span>, <span className="text-foreground">"NestJS"</span>, <span className="text-foreground">"PostgreSQL"</span>],</p>
                   <p className="pl-5">focus: <span className="text-foreground">"Scalable MVPs &amp; APIs"</span>,</p>
-                  <p className="pl-5">timezone: <span className="text-emerald-400">"IST (Replies &lt; 2 hrs)"</span>,</p>
+                  <p className="pl-5">timezone: <span className="text-emerald-500 font-semibold">"IST (Replies &lt; 2 hrs)"</span>,</p>
                   <p>{"};"}</p>
                 </div>
               </div>
@@ -150,11 +151,11 @@ function About() {
           </Reveal>
         </div>
 
-        {/* Anima Jain Style "Scroll to explore" pill */}
+        {/* Neomorphic "Scroll to explore" pill */}
         <div className="mt-14 flex justify-center">
           <a
             href="#work"
-            className="group inline-flex items-center gap-2.5 rounded-full glass px-4 py-2 text-xs font-mono tracking-wider text-muted-foreground border border-border/80 shadow-md transition-all hover:border-primary/60 hover:text-foreground"
+            className="group inline-flex items-center gap-2.5 rounded-full neu-convex-sm px-4 py-2 text-xs font-mono tracking-wider text-muted-foreground transition-all hover:scale-105 hover:text-foreground"
           >
             <span>Scroll to explore</span>
             <ArrowDown className="size-3 text-primary transition-transform group-hover:translate-y-0.5" />
@@ -162,20 +163,20 @@ function About() {
         </div>
       </section>
 
-      {/* Metrics / Trust Strip */}
-      <section className="mt-16 border-y border-border/60 py-8">
-        <div className="grid grid-cols-2 gap-6 md:grid-cols-4">
+      {/* Metrics / Trust Strip (Extruded Neomorphic Tiles) */}
+      <section className="mt-16 py-8">
+        <div className="grid grid-cols-2 gap-4 sm:gap-6 md:grid-cols-4">
           {STATS.map(({ value, label, Icon }, i) => (
             <Reveal key={label} delay={i * 80}>
-              <div className="flex items-center gap-3">
-                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary">
+              <div className="neu-flat-sm rounded-2xl p-4 sm:p-5 flex items-center gap-3.5 transition-transform duration-300 hover:scale-102">
+                <div className="flex size-10 shrink-0 items-center justify-center rounded-xl neu-convex-sm text-primary">
                   <Icon className="size-5" />
                 </div>
                 <div>
                   <div className="text-2xl font-bold tracking-tight text-foreground sm:text-3xl">
                     {value}
                   </div>
-                  <div className="font-mono text-[0.7rem] uppercase tracking-wider text-muted-foreground">
+                  <div className="font-mono text-[0.68rem] uppercase tracking-wider text-muted-foreground">
                     {label}
                   </div>
                 </div>
@@ -185,8 +186,8 @@ function About() {
         </div>
       </section>
 
-      {/* Featured Projects Showcase (Anima Jain Case Study Card Style) */}
-      <section id="work" className="mt-28 scroll-mt-24">
+      {/* Featured Projects Showcase (Neomorphic Tangible Cards) */}
+      <section id="work" className="mt-24 scroll-mt-24">
         <Reveal>
           <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
             <div>
@@ -210,17 +211,19 @@ function About() {
         <div className="mt-12 space-y-8">
           {featuredProjects.map((p, i) => (
             <Reveal key={p.slug} delay={i * 100} as="article">
-              <div className="glass group relative overflow-hidden rounded-3xl border border-border/80 p-6 sm:p-8 transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(var(--neon),0.15)]">
+              <div className="neu-card group relative overflow-hidden rounded-3xl p-6 sm:p-8">
                 <div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr] items-center">
-                  {/* Left: Image with Zoom Effect */}
-                  <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border/60">
-                    <img
-                      src={p.image}
-                      alt={p.name}
-                      loading="lazy"
-                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
-                    />
-                    <div className="absolute top-3 left-3 rounded-full bg-background/80 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wider backdrop-blur-md text-foreground border border-border/60">
+                  {/* Left: Recessed Image Well with Zoom Effect */}
+                  <div className="neu-pressed-sm relative aspect-[16/10] overflow-hidden rounded-2xl p-1.5">
+                    <div className="size-full overflow-hidden rounded-xl">
+                      <img
+                        src={p.image}
+                        alt={p.name}
+                        loading="lazy"
+                        className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                      />
+                    </div>
+                    <div className="absolute top-4 left-4 rounded-full neu-convex-sm px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wider text-foreground">
                       0{i + 1} · {p.year}
                     </div>
                   </div>
@@ -242,7 +245,7 @@ function About() {
                         {p.tech.map((t) => (
                           <li
                             key={t}
-                            className="rounded-full border border-border/80 bg-secondary/30 px-3 py-1 font-mono text-[0.7rem] tracking-wider text-muted-foreground uppercase"
+                            className="rounded-full neu-pressed-sm px-3 py-1 font-mono text-[0.7rem] tracking-wider text-muted-foreground uppercase"
                           >
                             {t}
                           </li>
@@ -254,7 +257,7 @@ function About() {
                       <Link
                         to="/projects/$slug"
                         params={{ slug: p.slug }}
-                        className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-xs font-medium text-background transition-transform hover:-translate-y-0.5"
+                        className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-xs font-semibold text-background neu-button"
                       >
                         Read Case Study
                         <ArrowRight className="size-3.5" />
@@ -264,7 +267,7 @@ function About() {
                           href={p.demoUrl}
                           target="_blank"
                           rel="noreferrer noopener"
-                          className="inline-flex items-center gap-1.5 rounded-full border border-border glass px-5 py-2.5 text-xs font-medium text-foreground transition-all hover:border-primary hover:text-primary hover:-translate-y-0.5"
+                          className="inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-xs font-medium text-foreground neu-button"
                         >
                           Live Storefront
                           <ExternalLink className="size-3.5" />
@@ -279,7 +282,7 @@ function About() {
         </div>
       </section>
 
-      {/* Services / What I Build Section */}
+      {/* Services / Core Capabilities (Neomorphic Bento Grid) */}
       <section className="mt-28">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto">
@@ -298,9 +301,9 @@ function About() {
         <div className="mt-12 grid gap-6 sm:grid-cols-2">
           {SERVICES.map(({ Icon, title, body, tags }, i) => (
             <Reveal key={title} delay={i * 90} as="article">
-              <div className="card-hover glass h-full rounded-2xl p-7 flex flex-col justify-between">
+              <div className="neu-card h-full rounded-3xl p-7 flex flex-col justify-between">
                 <div>
-                  <div className="flex size-11 items-center justify-center rounded-xl bg-primary/10 border border-primary/20 text-primary mb-5">
+                  <div className="flex size-11 items-center justify-center rounded-2xl neu-convex-sm text-primary mb-5">
                     <Icon className="size-5" />
                   </div>
                   <h3 className="text-xl font-semibold text-foreground">{title}</h3>
@@ -310,7 +313,7 @@ function About() {
                   {tags.map((tag) => (
                     <li
                       key={tag}
-                      className="rounded-full border border-border/80 bg-secondary/30 px-3 py-1 font-mono text-[0.68rem] tracking-wider text-muted-foreground uppercase"
+                      className="rounded-full neu-pressed-sm px-3 py-1 font-mono text-[0.68rem] tracking-wider text-muted-foreground uppercase"
                     >
                       {tag}
                     </li>
@@ -322,12 +325,12 @@ function About() {
         </div>
       </section>
 
-      {/* High-Converting CTA Banner */}
+      {/* High-Converting Neomorphic CTA Banner */}
       <section className="mt-28 mb-12">
         <Reveal>
-          <div className="glass relative overflow-hidden rounded-3xl border border-primary/30 p-8 sm:p-14 text-center bg-gradient-to-b from-primary/5 to-transparent">
+          <div className="neu-flat-lg relative overflow-hidden rounded-3xl p-8 sm:p-14 text-center">
             <div className="mx-auto max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 font-mono text-xs uppercase tracking-widest text-primary">
+              <div className="inline-flex items-center gap-2 rounded-full neu-pressed-sm px-3.5 py-1.5 font-mono text-xs uppercase tracking-widest text-primary">
                 <Sparkles className="size-3" />
                 Let's Build Together
               </div>
@@ -340,13 +343,13 @@ function About() {
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   to="/contact"
-                  className="rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-xl shadow-primary/25 transition-all hover:-translate-y-0.5 hover:shadow-primary/35"
+                  className="rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground neu-button"
                 >
                   Start a Project / Hire Me
                 </Link>
                 <a
                   href="mailto:amohdanas125@gmail.com"
-                  className="rounded-full border border-border glass px-8 py-4 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+                  className="rounded-full px-8 py-4 text-sm font-medium text-foreground neu-button"
                 >
                   amohdanas125@gmail.com
                 </a>
