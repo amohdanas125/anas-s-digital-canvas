@@ -24,20 +24,14 @@ export function ThemeToggle() {
     }
   };
 
-  if (!mounted) {
-    return (
-      <div className="size-8 rounded-full neu-pressed-sm opacity-50" />
-    );
-  }
-
-  const isDark = theme === "dark";
+  const isDark = mounted ? theme === "dark" : true;
 
   return (
     <button
       type="button"
       onClick={toggleTheme}
       aria-label={isDark ? "Switch to light theme" : "Switch to dark theme"}
-      className="group relative flex size-8 items-center justify-center rounded-full neu-button cursor-pointer transition-all duration-300 hover:scale-108 active:scale-95"
+      className="group relative flex size-8 shrink-0 items-center justify-center rounded-full neu-button cursor-pointer transition-all duration-300 hover:scale-108 active:scale-95"
       title={isDark ? "Switch to Soft Light Neomorphism" : "Switch to Matte Dark Neomorphism"}
     >
       <div className="relative size-4">
