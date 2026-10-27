@@ -211,7 +211,7 @@ export function ChatWidget() {
               type="submit"
               disabled={loading || !input.trim()}
               aria-label="Send message"
-              className="flex size-9 shrink-0 items-center justify-center rounded-full bg-primary text-primary-foreground neu-button disabled:opacity-40 cursor-pointer"
+              className="flex size-9 shrink-0 items-center justify-center rounded-full neu-button-primary disabled:opacity-40 cursor-pointer"
             >
               <Send className="size-3.5" />
             </button>

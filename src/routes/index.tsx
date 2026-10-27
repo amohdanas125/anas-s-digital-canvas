@@ -116,14 +116,14 @@ function About() {
             <div className="mt-9 flex flex-wrap items-center gap-4">
               <a
                 href="#work"
-                className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-semibold text-primary-foreground neu-button hover:opacity-95"
+                className="group inline-flex items-center gap-2 rounded-full neu-button-primary px-7 py-3.5 text-sm"
               >
                 Explore Selected Work
                 <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
               </a>
               <Link
                 to="/contact"
-                className="inline-flex items-center gap-2 rounded-full px-6 py-3.5 text-sm font-medium text-foreground neu-button"
+                className="inline-flex items-center gap-2 rounded-full neu-button px-6 py-3.5 text-sm"
               >
                 Hire Me / Let's Talk
               </Link>
@@ -257,7 +257,7 @@ function About() {
                       <Link
                         to="/projects/$slug"
                         params={{ slug: p.slug }}
-                        className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-xs font-semibold text-background neu-button"
+                        className="inline-flex items-center gap-1.5 rounded-full neu-button-primary px-5 py-2.5 text-xs"
                       >
                         Read Case Study
                         <ArrowRight className="size-3.5" />
@@ -267,7 +267,7 @@ function About() {
                           href={p.demoUrl}
                           target="_blank"
                           rel="noreferrer noopener"
-                          className="inline-flex items-center gap-1.5 rounded-full px-5 py-2.5 text-xs font-medium text-foreground neu-button"
+                          className="inline-flex items-center gap-1.5 rounded-full neu-button px-5 py-2.5 text-xs"
                         >
                           Live Storefront
                           <ExternalLink className="size-3.5" />
@@ -343,13 +343,13 @@ function About() {
               <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   to="/contact"
-                  className="rounded-full bg-primary px-8 py-4 text-sm font-semibold text-primary-foreground neu-button"
+                  className="rounded-full neu-button-primary px-8 py-4 text-sm"
                 >
                   Start a Project / Hire Me
                 </Link>
                 <a
                   href="mailto:amohdanas125@gmail.com"
-                  className="rounded-full px-8 py-4 text-sm font-medium text-foreground neu-button"
+                  className="rounded-full neu-button px-8 py-4 text-sm"
                 >
                   amohdanas125@gmail.com
                 </a>

@@ -207,7 +207,7 @@ function Contact() {
 
             <button
               type="submit"
-              className="mt-7 inline-flex w-full items-center justify-center rounded-full bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground neu-button cursor-pointer sm:w-auto"
+              className="mt-7 inline-flex w-full items-center justify-center rounded-full neu-button-primary px-8 py-3.5 text-sm cursor-pointer sm:w-auto"
             >
               Send Message
             </button>

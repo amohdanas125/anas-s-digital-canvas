@@ -45,37 +45,37 @@
 
   /* Neomorphic Porcelain Surface (Light Theme) */
   --background: #edf2f7;
-  --foreground: #1e293b;
+  --foreground: #0f172a; /* Crisp high-contrast slate-900 */
   --card: #edf2f7;
-  --card-foreground: #1e293b;
+  --card-foreground: #0f172a;
   --popover: #f3f6fa;
-  --popover-foreground: #1e293b;
+  --popover-foreground: #0f172a;
 
   --primary: #0284c7;
   --primary-foreground: #ffffff;
   --secondary: #e2e8f0;
-  --secondary-foreground: #1e293b;
+  --secondary-foreground: #0f172a;
   --muted: #e2e8f0;
-  --muted-foreground: #64748b;
+  --muted-foreground: #475569; /* Slate-600: strong readable contrast */
   --accent: #0284c7;
   --accent-foreground: #ffffff;
   --destructive: #ef4444;
   --destructive-foreground: #ffffff;
 
-  --border: rgba(166, 180, 200, 0.4);
-  --input: rgba(166, 180, 200, 0.45);
+  --border: rgba(166, 180, 200, 0.45);
+  --input: rgba(166, 180, 200, 0.5);
   --ring: #0284c7;
 
   --neon: #0284c7;
   --neon-2: #6366f1;
-  --glass: rgba(237, 242, 247, 0.88);
+  --glass: rgba(237, 242, 247, 0.9);
 
   --gradient-neon: linear-gradient(135deg, #0284c7, #6366f1);
   --gradient-surface: linear-gradient(145deg, #f7faff, #e2e8f0);
 
   /* Neomorphic 3D Shadow Tokens (Light Porcelain) */
   --neu-bg: #edf2f7;
-  --neu-border: rgba(255, 255, 255, 0.8);
+  --neu-border: rgba(255, 255, 255, 0.85);
   --neu-flat: 8px 8px 18px #c8d3e0, -8px -8px 18px #ffffff;
   --neu-flat-sm: 4px 4px 10px #c8d3e0, -4px -4px 10px #ffffff;
   --neu-flat-lg: 14px 14px 32px #c0ccdc, -14px -14px 32px #ffffff;
@@ -84,8 +84,16 @@
   --neu-convex: linear-gradient(145deg, #f7faff, #e2e8f0);
   --neu-concave: linear-gradient(145deg, #e2e8f0, #f7faff);
 
+  /* Primary Button Tokens (Light: Rich Ocean Blue Gradient with Pure White Text) */
+  --neu-primary-bg: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);
+  --neu-primary-fg: #ffffff;
+  --neu-primary-border: rgba(255, 255, 255, 0.45);
+  --neu-primary-shadow: 6px 6px 16px rgba(2, 132, 199, 0.38), -4px -4px 12px rgba(255, 255, 255, 0.95);
+  --neu-primary-shadow-hover: 8px 8px 20px rgba(2, 132, 199, 0.48), -5px -5px 14px rgba(255, 255, 255, 1);
+  --neu-primary-shadow-active: inset 3px 3px 6px rgba(0, 0, 0, 0.35), inset -2px -2px 5px rgba(255, 255, 255, 0.3);
+
   --shadow-soft: 8px 8px 18px #c8d3e0, -8px -8px 18px #ffffff;
-  --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.3);
+  --shadow-glow: 0 0 25px rgba(2, 132, 199, 0.35);
 }
 
 .dark {
@@ -93,20 +101,20 @@
 
   /* Neomorphic Matte Slate Surface (Dark Theme) */
   --background: #14171d;
-  --foreground: #f1f5f9;
+  --foreground: #f8fafc; /* Crisp white */
   --card: #14171d;
-  --card-foreground: #f1f5f9;
+  --card-foreground: #f8fafc;
   --popover: #191d24;
-  --popover-foreground: #f1f5f9;
+  --popover-foreground: #f8fafc;
 
   --primary: #38bdf8;
-  --primary-foreground: #0b1120;
+  --primary-foreground: #070e1b;
   --secondary: #1c212a;
-  --secondary-foreground: #f1f5f9;
+  --secondary-foreground: #f8fafc;
   --muted: #1c212a;
   --muted-foreground: #94a3b8;
   --accent: #38bdf8;
-  --accent-foreground: #0b1120;
+  --accent-foreground: #070e1b;
   --destructive: #f87171;
   --destructive-foreground: #ffffff;
 
@@ -116,7 +124,7 @@
 
   --neon: #38bdf8;
   --neon-2: #818cf8;
-  --glass: rgba(20, 23, 29, 0.88);
+  --glass: rgba(20, 23, 29, 0.9);
 
   --gradient-neon: linear-gradient(135deg, #38bdf8, #818cf8);
   --gradient-surface: linear-gradient(145deg, #181c23, #111419);
@@ -131,6 +139,14 @@
   --neu-pressed-sm: inset 2px 2px 5px #0a0c0f, inset -2px -2px 5px rgba(255, 255, 255, 0.035);
   --neu-convex: linear-gradient(145deg, #181c23, #111419);
   --neu-concave: linear-gradient(145deg, #111419, #181c23);
+
+  /* Primary Button Tokens (Dark: Bright Sky/Cyan Gradient with Deep Dark Text) */
+  --neu-primary-bg: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
+  --neu-primary-fg: #070e1b;
+  --neu-primary-border: rgba(255, 255, 255, 0.3);
+  --neu-primary-shadow: 6px 6px 18px rgba(0, 0, 0, 0.7), -3px -3px 10px rgba(56, 189, 248, 0.25);
+  --neu-primary-shadow-hover: 8px 8px 22px rgba(0, 0, 0, 0.8), -4px -4px 14px rgba(56, 189, 248, 0.35);
+  --neu-primary-shadow-active: inset 3px 3px 6px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.2);
 
   --shadow-soft: 8px 8px 20px #0a0c0f, -6px -6px 16px rgba(255, 255, 255, 0.04);
   --shadow-glow: 0 0 25px rgba(56, 189, 248, 0.35);
@@ -215,19 +231,44 @@
   border: 1px solid var(--neu-border);
 }
 
+/* Standard Tactile Surface Button (Secondary / Outlined) */
 @utility neu-button {
   background: var(--neu-convex);
+  color: var(--foreground) !important;
   box-shadow: var(--neu-flat-sm);
   border: 1px solid var(--neu-border);
+  font-weight: 500;
   transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
 
   &:hover {
+    color: var(--primary) !important;
     box-shadow: var(--neu-flat);
     transform: translateY(-2px);
   }
 
   &:active {
     box-shadow: var(--neu-pressed-sm);
+    transform: translateY(1px);
+  }
+}
+
+/* Primary High-Impact CTA Button (Always 100% Legible with Rich Contrast) */
+@utility neu-button-primary {
+  background: var(--neu-primary-bg) !important;
+  color: var(--neu-primary-fg) !important;
+  box-shadow: var(--neu-primary-shadow);
+  border: 1px solid var(--neu-primary-border);
+  font-weight: 600;
+  transition: all 0.25s cubic-bezier(0.22, 1, 0.36, 1);
+
+  &:hover {
+    box-shadow: var(--neu-primary-shadow-hover);
+    transform: translateY(-2px);
+    filter: brightness(1.06);
+  }
+
+  &:active {
+    box-shadow: var(--neu-primary-shadow-active);
     transform: translateY(1px);
   }
 }

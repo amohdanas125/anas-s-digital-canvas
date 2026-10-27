@@ -83,7 +83,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             {/* Hire Me CTA Button */}
             <Link
               to="/contact"
-              className="ml-1 inline-flex items-center gap-1 rounded-full bg-primary px-3.5 py-1.5 text-xs font-semibold text-primary-foreground neu-button hover:opacity-95 transition-all"
+              className="ml-1 inline-flex items-center gap-1.5 rounded-full neu-button-primary px-4 py-1.5 text-xs"
             >
               Hire Me
               <ArrowUpRight className="size-3" />
@@ -126,7 +126,7 @@ export function SiteLayout({ children }: { children: ReactNode }) {
             ))}
             <Link
               to="/contact"
-              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-2xl bg-primary px-4 py-2.5 text-sm font-semibold text-primary-foreground neu-button"
+              className="mt-2 inline-flex items-center justify-center gap-1.5 rounded-2xl neu-button-primary px-4 py-2.5 text-sm"
             >
               Hire Me / Let's Talk
               <ArrowUpRight className="size-4" />

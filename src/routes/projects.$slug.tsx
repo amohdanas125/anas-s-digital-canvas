@@ -72,7 +72,7 @@ function ProjectDetail() {
               href={project.demoUrl}
               target="_blank"
               rel="noreferrer noopener"
-              className="inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-semibold text-primary-foreground neu-button"
+              className="inline-flex items-center gap-2 rounded-full neu-button-primary px-6 py-3 text-sm"
             >
               <ExternalLink className="size-4" aria-hidden="true" /> Live Demo
             </a>
