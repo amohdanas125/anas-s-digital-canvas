@@ -2,16 +2,14 @@ import { createFileRoute, Link } from "@tanstack/react-router";
 import {
   ArrowRight,
   Sparkles,
-  Terminal,
   Rocket,
   Zap,
   ShoppingBag,
   Bot,
   ExternalLink,
-  ShieldCheck,
   Clock,
   Globe,
-  ArrowUpRight,
+  ArrowDown,
 } from "lucide-react";
 import { Reveal } from "@/components/site/Reveal";
 import { ProfilePhoto } from "@/components/site/ProfilePhoto";
@@ -92,59 +90,76 @@ function About() {
 
   return (
     <div className="mx-auto w-[min(1120px,calc(100%-2rem))]">
-      {/* Hero Section */}
-      <section className="grid items-center gap-12 lg:grid-cols-[1.2fr_.8fr]">
-        <Reveal>
-          <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1 text-xs font-mono tracking-widest text-primary uppercase">
-            <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
-            Available for Freelance &amp; Contract MVPs
-          </div>
-          <h1 className="mt-4 text-5xl leading-[1.05] font-semibold tracking-tight sm:text-7xl">
-            Mohd <span className="text-gradient">Anas</span>
-          </h1>
-          <p className="mt-5 max-w-xl font-mono text-sm tracking-[0.15em] text-muted-foreground uppercase">
-            Full-Stack Web &amp; AI/ML Engineer
-          </p>
-          <p className="mt-6 max-w-xl leading-relaxed text-muted-foreground">
-            Specializing in modern web architectures with <span className="text-foreground font-medium">Next.js</span>,{" "}
-            <span className="text-foreground font-medium">NestJS</span>,{" "}
-            <span className="text-foreground font-medium">TypeScript</span>, and{" "}
-            <span className="text-foreground font-medium">PostgreSQL</span>. I partner with founders, startups, and agencies
-            worldwide to turn ambitious product ideas into robust, high-performance web applications that convert.
-          </p>
-          <div className="mt-9 flex flex-wrap gap-3">
-            <Link
-              to="/projects"
-              className="group inline-flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-medium text-primary-foreground transition-transform hover:-translate-y-0.5 shadow-lg shadow-primary/20"
-            >
-              Explore Featured Work
-              <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
-            </Link>
-            <Link
-              to="/contact"
-              className="inline-flex items-center gap-2 rounded-full border border-border px-6 py-3 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
-            >
-              Hire Me / Let's Talk
-            </Link>
-          </div>
-        </Reveal>
-
-        <Reveal delay={120}>
-          <ProfilePhoto />
-          <div className="glass grid-lines relative mx-auto mt-6 max-w-sm overflow-hidden rounded-3xl p-6">
-            <div className="font-mono text-xs leading-7 text-muted-foreground">
-              <p>
-                <span className="text-primary">const</span> engineer = {"{"}
-              </p>
-              <p className="pl-5">name: <span className="text-foreground">"Mohd Anas"</span>,</p>
-              <p className="pl-5">role: <span className="text-foreground">"Full-Stack Web &amp; AI Engineer"</span>,</p>
-              <p className="pl-5">coreStack: [<span className="text-foreground">"Next.js"</span>, <span className="text-foreground">"NestJS"</span>, <span className="text-foreground">"PostgreSQL"</span>],</p>
-              <p className="pl-5">focus: <span className="text-foreground">"Production MVPs &amp; APIs"</span>,</p>
-              <p className="pl-5">timezone: <span className="text-emerald-400">"IST (Replies &lt; 2 hrs)"</span>,</p>
-              <p>{"};"}</p>
+      {/* Hero Stage (Anima Jain Inspired) */}
+      <section className="relative min-h-[75vh] flex flex-col justify-center">
+        <div className="grid items-center gap-12 lg:grid-cols-[1.2fr_.8fr]">
+          <Reveal>
+            <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-4 py-1.5 text-xs font-mono tracking-widest text-primary uppercase shadow-[0_0_15px_rgba(var(--neon),0.15)]">
+              <span className="size-2 rounded-full bg-emerald-400 animate-pulse" />
+              Available for Freelance &amp; Contract MVPs
             </div>
-          </div>
-        </Reveal>
+
+            <h1 className="mt-5 text-5xl leading-[1.05] font-semibold tracking-tight sm:text-7xl">
+              Mohd <span className="text-gradient">Anas</span>
+            </h1>
+
+            <p className="mt-4 max-w-xl font-mono text-sm tracking-[0.2em] text-muted-foreground uppercase">
+              Full-Stack Web &amp; AI/ML Engineer
+            </p>
+
+            <p className="mt-6 max-w-xl text-base sm:text-lg leading-relaxed text-muted-foreground">
+              I partner with founders, fast-moving startups, and global clients to engineer{" "}
+              <span className="text-foreground font-semibold">high-performance SaaS MVPs</span>, luxury e-commerce
+              storefronts, and scalable full-stack web applications with Next.js, NestJS, and PostgreSQL.
+            </p>
+
+            <div className="mt-9 flex flex-wrap items-center gap-4">
+              <a
+                href="#work"
+                className="group inline-flex items-center gap-2 rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-xl shadow-primary/20 transition-all hover:-translate-y-0.5 hover:shadow-primary/30"
+              >
+                Explore Selected Work
+                <ArrowRight className="size-4 transition-transform group-hover:translate-x-1" />
+              </a>
+              <Link
+                to="/contact"
+                className="inline-flex items-center gap-2 rounded-full border border-border/80 glass px-6 py-3.5 text-sm font-medium text-foreground transition-all hover:border-primary hover:text-primary hover:-translate-y-0.5"
+              >
+                Hire Me / Let's Talk
+              </Link>
+            </div>
+          </Reveal>
+
+          <Reveal delay={120}>
+            <div className="relative">
+              <ProfilePhoto />
+              <div className="glass grid-lines relative mx-auto mt-6 max-w-sm overflow-hidden rounded-3xl p-6 border border-border/80 shadow-2xl">
+                <div className="font-mono text-xs leading-7 text-muted-foreground">
+                  <p>
+                    <span className="text-primary">const</span> engineer = {"{"}
+                  </p>
+                  <p className="pl-5">name: <span className="text-foreground">"Mohd Anas"</span>,</p>
+                  <p className="pl-5">role: <span className="text-foreground">"Full-Stack Web &amp; AI Engineer"</span>,</p>
+                  <p className="pl-5">coreStack: [<span className="text-foreground">"Next.js"</span>, <span className="text-foreground">"NestJS"</span>, <span className="text-foreground">"PostgreSQL"</span>],</p>
+                  <p className="pl-5">focus: <span className="text-foreground">"Scalable MVPs &amp; APIs"</span>,</p>
+                  <p className="pl-5">timezone: <span className="text-emerald-400">"IST (Replies &lt; 2 hrs)"</span>,</p>
+                  <p>{"};"}</p>
+                </div>
+              </div>
+            </div>
+          </Reveal>
+        </div>
+
+        {/* Anima Jain Style "Scroll to explore" pill */}
+        <div className="mt-14 flex justify-center">
+          <a
+            href="#work"
+            className="group inline-flex items-center gap-2.5 rounded-full glass px-4 py-2 text-xs font-mono tracking-wider text-muted-foreground border border-border/80 shadow-md transition-all hover:border-primary/60 hover:text-foreground"
+          >
+            <span>Scroll to explore</span>
+            <ArrowDown className="size-3 text-primary transition-transform group-hover:translate-y-0.5" />
+          </a>
+        </div>
       </section>
 
       {/* Metrics / Trust Strip */}
@@ -170,14 +185,108 @@ function About() {
         </div>
       </section>
 
+      {/* Featured Projects Showcase (Anima Jain Case Study Card Style) */}
+      <section id="work" className="mt-28 scroll-mt-24">
+        <Reveal>
+          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
+            <div>
+              <p className="font-mono text-xs tracking-[0.3em] text-primary uppercase">
+                Selected Work
+              </p>
+              <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-5xl">
+                Commercial Projects &amp; <span className="text-gradient">Live MVPs</span>
+              </h2>
+            </div>
+            <Link
+              to="/projects"
+              className="group inline-flex items-center gap-1.5 font-mono text-xs tracking-wider text-primary hover:underline uppercase"
+            >
+              View all projects
+              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
+            </Link>
+          </div>
+        </Reveal>
+
+        <div className="mt-12 space-y-8">
+          {featuredProjects.map((p, i) => (
+            <Reveal key={p.slug} delay={i * 100} as="article">
+              <div className="glass group relative overflow-hidden rounded-3xl border border-border/80 p-6 sm:p-8 transition-all duration-300 hover:border-primary/50 hover:shadow-[0_0_30px_rgba(var(--neon),0.15)]">
+                <div className="grid gap-8 lg:grid-cols-[1.1fr_.9fr] items-center">
+                  {/* Left: Image with Zoom Effect */}
+                  <div className="relative aspect-[16/10] overflow-hidden rounded-2xl border border-border/60">
+                    <img
+                      src={p.image}
+                      alt={p.name}
+                      loading="lazy"
+                      className="size-full object-cover transition-transform duration-700 group-hover:scale-105"
+                    />
+                    <div className="absolute top-3 left-3 rounded-full bg-background/80 px-3 py-1 font-mono text-[0.65rem] uppercase tracking-wider backdrop-blur-md text-foreground border border-border/60">
+                      0{i + 1} · {p.year}
+                    </div>
+                  </div>
+
+                  {/* Right: Rich Editorial Content */}
+                  <div className="flex flex-col justify-between h-full">
+                    <div>
+                      <span className="font-mono text-xs tracking-widest text-primary uppercase">
+                        {p.tagline}
+                      </span>
+                      <h3 className="mt-2 text-2xl sm:text-3xl font-semibold text-foreground group-hover:text-primary transition-colors">
+                        {p.name}
+                      </h3>
+                      <p className="mt-3 text-sm text-muted-foreground leading-relaxed">
+                        {p.blurb}
+                      </p>
+
+                      <ul className="mt-6 flex flex-wrap gap-2">
+                        {p.tech.map((t) => (
+                          <li
+                            key={t}
+                            className="rounded-full border border-border/80 bg-secondary/30 px-3 py-1 font-mono text-[0.7rem] tracking-wider text-muted-foreground uppercase"
+                          >
+                            {t}
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+
+                    <div className="mt-8 flex flex-wrap items-center gap-3 pt-6 border-t border-border/40">
+                      <Link
+                        to="/projects/$slug"
+                        params={{ slug: p.slug }}
+                        className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-5 py-2.5 text-xs font-medium text-background transition-transform hover:-translate-y-0.5"
+                      >
+                        Read Case Study
+                        <ArrowRight className="size-3.5" />
+                      </Link>
+                      {p.demoUrl && (
+                        <a
+                          href={p.demoUrl}
+                          target="_blank"
+                          rel="noreferrer noopener"
+                          className="inline-flex items-center gap-1.5 rounded-full border border-border glass px-5 py-2.5 text-xs font-medium text-foreground transition-all hover:border-primary hover:text-primary hover:-translate-y-0.5"
+                        >
+                          Live Storefront
+                          <ExternalLink className="size-3.5" />
+                        </a>
+                      )}
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          ))}
+        </div>
+      </section>
+
       {/* Services / What I Build Section */}
-      <section className="mt-24">
+      <section className="mt-28">
         <Reveal>
           <div className="text-center max-w-2xl mx-auto">
             <p className="font-mono text-xs tracking-[0.3em] text-primary uppercase">
               Core Capabilities
             </p>
-            <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-4xl">
+            <h2 className="mt-3 text-3xl font-semibold tracking-tight sm:text-5xl">
               Engineering Built for <span className="text-gradient">Scale &amp; Conversion</span>
             </h2>
             <p className="mt-4 text-sm text-muted-foreground leading-relaxed">
@@ -213,89 +322,12 @@ function About() {
         </div>
       </section>
 
-      {/* Featured Projects Direct Preview */}
-      <section className="mt-28">
-        <Reveal>
-          <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4">
-            <div>
-              <p className="font-mono text-xs tracking-[0.3em] text-primary uppercase">
-                Featured Work
-              </p>
-              <h2 className="mt-2 text-3xl font-semibold tracking-tight sm:text-4xl">
-                Commercial Projects &amp; <span className="text-gradient">Live MVPs</span>
-              </h2>
-            </div>
-            <Link
-              to="/projects"
-              className="group inline-flex items-center gap-1.5 font-mono text-xs tracking-wider text-primary hover:underline uppercase"
-            >
-              View all 6 projects
-              <ArrowRight className="size-3.5 transition-transform group-hover:translate-x-1" />
-            </Link>
-          </div>
-        </Reveal>
-
-        <div className="mt-10 grid gap-6 md:grid-cols-3">
-          {featuredProjects.map((p, i) => (
-            <Reveal key={p.slug} delay={i * 90} as="article">
-              <div className="glass group flex h-full flex-col overflow-hidden rounded-2xl border border-border/80 transition-all hover:-translate-y-1 hover:border-primary/50">
-                <div className="relative aspect-[16/10] overflow-hidden">
-                  <img
-                    src={p.image}
-                    alt={p.name}
-                    loading="lazy"
-                    className="h-full w-full object-cover transition-transform duration-500 group-hover:scale-105"
-                  />
-                  <div className="absolute top-3 left-3 rounded-full bg-background/80 px-2.5 py-1 text-[0.65rem] font-mono uppercase tracking-wider backdrop-blur-md text-foreground border border-border/60">
-                    0{i + 1} · {p.role}
-                  </div>
-                </div>
-
-                <div className="flex flex-1 flex-col p-6">
-                  <span className="font-mono text-xs tracking-wider text-primary uppercase">
-                    {p.tagline}
-                  </span>
-                  <h3 className="mt-2 text-xl font-semibold text-foreground group-hover:text-primary transition-colors">
-                    {p.name}
-                  </h3>
-                  <p className="mt-2.5 text-xs text-muted-foreground leading-relaxed line-clamp-3">
-                    {p.blurb}
-                  </p>
-
-                  <div className="mt-auto pt-6 flex items-center justify-between">
-                    <Link
-                      to="/projects/$slug"
-                      params={{ slug: p.slug }}
-                      className="inline-flex items-center gap-1 text-xs font-medium text-foreground hover:text-primary"
-                    >
-                      Case Study
-                      <ArrowRight className="size-3" />
-                    </Link>
-                    {p.demoUrl && (
-                      <a
-                        href={p.demoUrl}
-                        target="_blank"
-                        rel="noreferrer noopener"
-                        className="inline-flex items-center gap-1 text-xs font-medium text-primary hover:underline"
-                      >
-                        Live Demo
-                        <ExternalLink className="size-3" />
-                      </a>
-                    )}
-                  </div>
-                </div>
-              </div>
-            </Reveal>
-          ))}
-        </div>
-      </section>
-
       {/* High-Converting CTA Banner */}
       <section className="mt-28 mb-12">
         <Reveal>
-          <div className="glass relative overflow-hidden rounded-3xl border border-primary/30 p-8 sm:p-12 text-center bg-gradient-to-b from-primary/5 to-transparent">
+          <div className="glass relative overflow-hidden rounded-3xl border border-primary/30 p-8 sm:p-14 text-center bg-gradient-to-b from-primary/5 to-transparent">
             <div className="mx-auto max-w-2xl">
-              <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3 py-1 font-mono text-xs uppercase tracking-widest text-primary">
+              <div className="inline-flex items-center gap-2 rounded-full border border-primary/30 bg-primary/10 px-3.5 py-1.5 font-mono text-xs uppercase tracking-widest text-primary">
                 <Sparkles className="size-3" />
                 Let's Build Together
               </div>
@@ -303,18 +335,18 @@ function About() {
                 Have a Web App or <span className="text-gradient">MVP in Mind?</span>
               </h2>
               <p className="mt-4 text-sm text-muted-foreground leading-relaxed sm:text-base">
-                Whether you need a full-stack SaaS MVP built from scratch, a high-converting e-commerce storefront, or high-performance API engineering — I'm ready to turn your concept into reliable production code.
+                Whether you need a full-stack SaaS MVP built from scratch, a luxury e-commerce storefront, or high-performance API engineering — I'm ready to turn your concept into reliable production code.
               </p>
-              <div className="mt-8 flex flex-wrap justify-center gap-3">
+              <div className="mt-8 flex flex-wrap justify-center gap-4">
                 <Link
                   to="/contact"
-                  className="rounded-full bg-primary px-7 py-3.5 text-sm font-medium text-primary-foreground shadow-lg shadow-primary/25 transition-transform hover:-translate-y-0.5"
+                  className="rounded-full bg-primary px-8 py-4 text-sm font-medium text-primary-foreground shadow-xl shadow-primary/25 transition-all hover:-translate-y-0.5 hover:shadow-primary/35"
                 >
                   Start a Project / Hire Me
                 </Link>
                 <a
                   href="mailto:amohdanas125@gmail.com"
-                  className="rounded-full border border-border px-7 py-3.5 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
+                  className="rounded-full border border-border glass px-8 py-4 text-sm font-medium transition-colors hover:border-primary hover:text-primary"
                 >
                   amohdanas125@gmail.com
                 </a>
