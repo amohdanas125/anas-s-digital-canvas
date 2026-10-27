@@ -11,6 +11,7 @@ import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
 import { SiteLayout } from "@/components/site/SiteLayout";
+import { ChatWidget } from "@/components/site/ChatWidget";
 import { Toaster } from "@/components/ui/sonner";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
@@ -79,10 +80,11 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
     meta: [
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
-      { title: "Mohd Anas — Fullstack Developer" },
+      { title: "Mohd Anas — Full-Stack Web & AI/ML Engineer" },
       {
         name: "description",
-        content: "Portfolio of Mohd Anas, fullstack developer and B.Tech CSE (AI/ML) student.",
+        content:
+          "Portfolio of Mohd Anas, Full-Stack Web & AI/ML Engineer crafting scalable web applications, modern SaaS MVPs, and production APIs.",
       },
       { name: "author", content: "Mohd Anas" },
       { property: "og:site_name", content: "Mohd Anas" },
@@ -134,6 +136,7 @@ function RootComponent() {
         {/* Required: nested routes render here. Removing <Outlet /> breaks all child routes. */}
         <Outlet />
       </SiteLayout>
+      <ChatWidget />
       <Toaster position="top-center" />
     </QueryClientProvider>
   );

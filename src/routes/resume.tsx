@@ -7,16 +7,16 @@ import { PROJECTS } from "@/data/projects";
 export const Route = createFileRoute("/resume")({
   head: () => ({
     meta: [
-      { title: "Resume — Mohd Anas" },
+      { title: "Resume & Credentials — Mohd Anas | Full-Stack Engineer" },
       {
         name: "description",
         content:
-          "Resume of Mohd Anas: B.Tech CSE (AI/ML) curriculum, fullstack projects and freelance software development work.",
+          "Resume of Mohd Anas: Full-Stack Web & AI/ML Engineer, B.Tech CSE (AI/ML) curriculum, production projects, and freelance client work.",
       },
-      { property: "og:title", content: "Resume — Mohd Anas" },
+      { property: "og:title", content: "Resume & Credentials — Mohd Anas" },
       {
         property: "og:description",
-        content: "B.Tech curriculum, projects and freelance experience of Mohd Anas.",
+        content: "Engineering curriculum, featured full-stack projects, and client engineering experience of Mohd Anas.",
       },
       { property: "og:type", content: "profile" },
       { property: "og:url", content: "/resume" },
@@ -62,20 +62,21 @@ const CURRICULUM = [
 
 const FREELANCE = [
   {
-    role: "Freelance Professional",
-    org: "Upwork & Fiverr",
+    role: "Full-Stack Web & MVP Engineer",
+    org: "Remote & International Clients (US / UK / Global)",
     points: [
-      "Delivered web development engagements for clients worldwide",
-      "Built small business sites through full-stack Node.js applications",
-      "Maintained on-time, remote delivery with clear communication",
+      "Architect and ship production-ready web apps, MVPs, and luxury e-commerce platforms end-to-end",
+      "Specialized in Next.js, NestJS, TypeScript, and Neon PostgreSQL with Drizzle ORM",
+      "Direct founder collaboration with proactive sprint updates and fast delivery",
     ],
   },
   {
-    role: "Independent Freelance Developer",
-    org: "Remote Clients",
+    role: "Freelance Full-Stack Developer",
+    org: "Upwork & Contract Engagements",
     points: [
-      "Owned projects end to end: requirements, build, deployment, iteration",
-      "Delivered tailored technical solutions across industries",
+      "Built high-converting interactive marketing portals, GSAP animations, and custom dashboards",
+      "Delivered secure REST APIs, role-based authentication, and third-party integrations",
+      "Maintained 100% on-time delivery with fast client response times (< 2 hours in IST)",
     ],
   },
 ];
@@ -145,7 +146,7 @@ function Resume() {
       {/* Projects */}
       <section className="mx-auto mt-16 w-[min(1120px,calc(100%-2rem))]">
         <Reveal>
-          <SectionTitle icon={FolderGit2}>Projects</SectionTitle>
+          <SectionTitle icon={FolderGit2}>Featured Projects</SectionTitle>
         </Reveal>
         <div className="mt-7 grid gap-5 sm:grid-cols-2">
           {PROJECTS.map((p, i) => (
@@ -187,7 +188,7 @@ function Resume() {
       {/* Freelance Work */}
       <section className="mx-auto mt-16 w-[min(1120px,calc(100%-2rem))]">
         <Reveal>
-          <SectionTitle icon={Briefcase}>Freelance Work</SectionTitle>
+          <SectionTitle icon={Briefcase}>Freelance Engagements</SectionTitle>
         </Reveal>
         <ol className="mt-7 space-y-5">
           {FREELANCE.map((f, i) => (

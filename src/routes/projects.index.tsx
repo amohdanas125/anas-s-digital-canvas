@@ -1,23 +1,41 @@
 import { createFileRoute, Link } from "@tanstack/react-router";
-import { ArrowUpRight } from "lucide-react";
 import { PageHeader } from "@/components/site/SiteLayout";
 import { Reveal } from "@/components/site/Reveal";
 import { PROJECTS } from "@/data/projects";
 
+function ArrowUpRight({ className }: { className?: string }) {
+  return (
+    <svg
+      xmlns="http://www.w3.org/2000/svg"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M7 7h10v10" />
+      <path d="M7 17 17 7" />
+    </svg>
+  );
+}
 
 export const Route = createFileRoute("/projects/")({
   head: () => ({
     meta: [
-      { title: "Projects — Mohd Anas" },
+      { title: "Featured Projects — Mohd Anas | Full-Stack & Commercial Apps" },
       {
         name: "description",
         content:
-          "Selected projects by Mohd Anas: Wanderlust, Artisan Leather Goods, BizmaticX, E-Commerce Platform, DSA solutions vault and this portfolio.",
+          "Selected production projects by Mohd Anas: Artisan Leather Goods, AH Perfume, BizmaticX, E-Commerce Fashion, Wanderlust, and digital portfolio.",
       },
-      { property: "og:title", content: "Projects — Mohd Anas" },
+      { property: "og:title", content: "Featured Projects — Mohd Anas" },
       {
         property: "og:description",
-        content: "Fullstack apps, digital marketing platforms and algorithm work built with React, NestJS, Supabase, Node.js and C++.",
+        content:
+          "Production full-stack apps, e-commerce storefronts, and marketing platforms built with Next.js, NestJS, Supabase, and PostgreSQL.",
       },
       { property: "og:type", content: "website" },
     ],
@@ -30,9 +48,9 @@ function Projects() {
   return (
     <>
       <PageHeader
-        eyebrow="Work"
-        title="Projects"
-        subtitle="Things I've designed, built and broken — then rebuilt better. Open a project for screenshots, stack details and links."
+        eyebrow="Commercial Work & MVPs"
+        title="Featured Projects"
+        subtitle="Production full-stack applications, luxury e-commerce platforms, and interactive client systems built with modern web architectures."
       />
       <div className="mx-auto mt-12 grid w-[min(1120px,calc(100%-2rem))] gap-5 sm:grid-cols-2 lg:grid-cols-3">
         {PROJECTS.map((p, i) => (
