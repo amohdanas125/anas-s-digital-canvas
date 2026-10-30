@@ -17,7 +17,7 @@ const NAV = [
 
 export const SOCIALS = [
   { href: "https://github.com/amohdanas125", label: "GitHub", Icon: Github },
-  { href: "https://www.linkedin.com/in/mohd-anas-910b42292", label: "LinkedIn", Icon: Linkedin },
+  { href: "https://www.linkedin.com/in/amohdanas125", label: "LinkedIn", Icon: Linkedin },
   { href: "https://leetcode.com/u/Mohd_Anas26/", label: "LeetCode", Icon: LeetCodeIcon },
   { href: "https://www.instagram.com/", label: "Instagram", Icon: Instagram },
 ];
