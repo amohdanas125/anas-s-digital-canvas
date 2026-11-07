@@ -27,7 +27,8 @@ export function ChatWidget() {
   const messagesEndRef = useRef<HTMLDivElement>(null);
 
   const apiBaseUrl =
-    (typeof import.meta !== "undefined" && import.meta.env?.VITE_API_URL) || "http://localhost:3000";
+    (typeof import.meta !== "undefined" && import.meta.env?.VITE_API_URL) ||
+    "https://freelancing-61rj.onrender.com";
 
   useEffect(() => {
     try {
