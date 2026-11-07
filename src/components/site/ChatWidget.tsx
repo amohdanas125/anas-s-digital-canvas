@@ -159,8 +159,8 @@ export function ChatWidget() {
                 <div
                   className={`max-w-[85%] rounded-2xl px-4 py-3 leading-relaxed ${
                     m.role === "user"
-                      ? "rounded-br-xs bg-primary text-primary-foreground font-semibold neu-flat-sm shadow-md"
-                      : "rounded-bl-xs neu-convex-sm text-foreground"
+                      ? "rounded-br-xs bg-gradient-to-r from-sky-600 to-blue-600 text-white font-medium shadow-md shadow-sky-500/20 border border-sky-400/30"
+                      : "rounded-bl-xs neu-convex-sm text-slate-800 dark:text-slate-100 border border-border/40"
                   }`}
                 >
                   <p className="whitespace-pre-wrap">{m.content}</p>
@@ -206,7 +206,7 @@ export function ChatWidget() {
               value={input}
               onChange={(e) => setInput(e.target.value)}
               placeholder="Tell me what you're building, your name, or country..."
-              className="flex-1 rounded-full neu-pressed px-4 py-2.5 text-xs text-foreground placeholder:text-muted-foreground focus:outline-none focus:ring-1 focus:ring-primary/40"
+              className="flex-1 rounded-full neu-pressed px-4 py-2.5 text-xs text-slate-900 dark:text-white font-medium placeholder:text-slate-400 dark:placeholder:text-slate-500 focus:outline-none focus:ring-2 focus:ring-sky-500/50"
             />
             <button
               type="submit"
