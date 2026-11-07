@@ -18,7 +18,7 @@ export function ChatWidget() {
     {
       role: "assistant",
       content:
-        "Hi there! I'm Anas's AI Assistant. Are you planning a new web app, SaaS MVP, or commercial e-commerce store? Feel free to share what you're building, your name, and where you're reaching out from!",
+        "Hi! I'm Anas's assistant. What kind of project are you looking to build?",
     },
   ]);
   const [input, setInput] = useState("");
